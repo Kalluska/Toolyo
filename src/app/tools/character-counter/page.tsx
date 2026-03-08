@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function CharacterCounterPage() {
   const [text, setText] = useState("");
@@ -48,6 +50,13 @@ export default function CharacterCounterPage() {
           ))}
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Character Counter"
+        description="Count characters, characters without spaces, words, and lines."
+      />
+      <RelatedTools currentSlug="character-counter" />
+
     </ToolLayout>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function HtmlEscape(){
 const [text,setText]=useState("");
@@ -17,6 +19,13 @@ return(
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
 <textarea readOnly value={escaped} className="border p-4 rounded-xl"/>
 </div>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="HTML Escape"
+        description="Escape HTML special characters."
+      />
+      <RelatedTools currentSlug="html-escape" />
+
+    </ToolLayout>
+  );
 }

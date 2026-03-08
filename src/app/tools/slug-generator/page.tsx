@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function SlugGeneratorPage() {
   const [text, setText] = useState("");
@@ -38,6 +40,13 @@ export default function SlugGeneratorPage() {
           />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Slug Generator"
+        description="Convert text into a clean URL slug."
+      />
+      <RelatedTools currentSlug="slug-generator" />
+
     </ToolLayout>
   );
 }

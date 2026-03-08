@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function RemoveExtraSpacesPage() {
   const [text, setText] = useState("");
@@ -37,6 +39,13 @@ export default function RemoveExtraSpacesPage() {
           />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Remove Extra Spaces"
+        description="Clean repeated spaces, tabs, and uneven spacing from text."
+      />
+      <RelatedTools currentSlug="remove-extra-spaces" />
+
     </ToolLayout>
   );
 }

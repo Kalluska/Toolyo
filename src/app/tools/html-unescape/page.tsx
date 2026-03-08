@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function HtmlUnescape(){
 const [text,setText]=useState("");
@@ -17,6 +19,13 @@ return(
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
 <textarea readOnly value={unescaped} className="border p-4 rounded-xl"/>
 </div>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="HTML Unescape"
+        description="Convert escaped HTML back to normal text."
+      />
+      <RelatedTools currentSlug="html-unescape" />
+
+    </ToolLayout>
+  );
 }

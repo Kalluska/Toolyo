@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 type CompareRow = {
   line: number;
@@ -80,6 +82,13 @@ export default function TextComparePage() {
           </table>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Text Compare"
+        description="Compare two text blocks line by line."
+      />
+      <RelatedTools currentSlug="text-compare" />
+
     </ToolLayout>
   );
 }

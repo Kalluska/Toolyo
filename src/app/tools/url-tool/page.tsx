@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function UrlToolPage() {
   const [text, setText] = useState("hello world?name=kalle&city=oulu");
@@ -47,6 +49,13 @@ export default function UrlToolPage() {
           </div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="URL Encode / Decode"
+        description="Encode and decode URL-safe strings instantly."
+      />
+      <RelatedTools currentSlug="url-tool" />
+
     </ToolLayout>
   );
 }

@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function RemoveEmptyLinesPage() {
   const [text, setText] = useState("");
@@ -30,6 +32,13 @@ export default function RemoveEmptyLinesPage() {
           <textarea readOnly value={output} className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4" />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Remove Empty Lines"
+        description="Remove empty lines from text instantly."
+      />
+      <RelatedTools currentSlug="remove-empty-lines" />
+
     </ToolLayout>
   );
 }

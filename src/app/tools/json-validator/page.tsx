@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function JsonValidator(){
 const [json,setJson]=useState("{}");
@@ -12,6 +14,13 @@ return(
 <ToolLayout currentSlug="json-validator" title="JSON Validator" description="Validate JSON data instantly.">
 <textarea value={json} onChange={(e)=>setJson(e.target.value)} className="w-full min-h-[250px] border p-4 rounded-xl"/>
 <div className="mt-4 text-xl">{result}</div>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="JSON Validator"
+        description="Validate JSON data instantly."
+      />
+      <RelatedTools currentSlug="json-validator" />
+
+    </ToolLayout>
+  );
 }

@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function JsonFormatterPage() {
   const [jsonInput, setJsonInput] = useState('{\n  "hello": "world"\n}');
@@ -42,6 +44,13 @@ export default function JsonFormatterPage() {
           />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="JSON Formatter"
+        description="Format and validate JSON instantly."
+      />
+      <RelatedTools currentSlug="json-formatter" />
+
     </ToolLayout>
   );
 }

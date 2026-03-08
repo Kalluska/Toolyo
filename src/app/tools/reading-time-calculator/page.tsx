@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function ReadingTimeCalculatorPage() {
   const [text, setText] = useState("");
@@ -31,6 +33,13 @@ export default function ReadingTimeCalculatorPage() {
           </div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Reading Time Calculator"
+        description="Estimate reading time from text instantly."
+      />
+      <RelatedTools currentSlug="reading-time-calculator" />
+
     </ToolLayout>
   );
 }

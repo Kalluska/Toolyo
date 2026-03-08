@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function ParagraphCounterPage() {
   const [text, setText] = useState("");
@@ -23,6 +25,13 @@ export default function ParagraphCounterPage() {
           <div className="mt-2 text-3xl font-bold">{count}</div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Paragraph Counter"
+        description="Count paragraphs in text instantly."
+      />
+      <RelatedTools currentSlug="paragraph-counter" />
+
     </ToolLayout>
   );
 }

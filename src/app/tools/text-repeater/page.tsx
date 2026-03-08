@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function TextRepeaterPage() {
   const [text, setText] = useState("");
@@ -32,6 +34,13 @@ export default function TextRepeaterPage() {
           <textarea readOnly value={output} className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4" />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Text Repeater"
+        description="Repeat text multiple times instantly."
+      />
+      <RelatedTools currentSlug="text-repeater" />
+
     </ToolLayout>
   );
 }

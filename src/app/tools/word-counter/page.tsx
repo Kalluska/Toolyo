@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function WordCounterPage() {
   const [text, setText] = useState("");
@@ -56,6 +58,13 @@ export default function WordCounterPage() {
           ))}
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Word Counter"
+        description="Count words, characters, lines, paragraphs, and estimated reading time."
+      />
+      <RelatedTools currentSlug="word-counter" />
+
     </ToolLayout>
   );
 }

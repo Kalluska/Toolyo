@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function TextLengthCounterPage() {
   const [text, setText] = useState("");
@@ -47,6 +49,13 @@ export default function TextLengthCounterPage() {
           </div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Text Length Counter"
+        description="Count text length instantly."
+      />
+      <RelatedTools currentSlug="text-length-counter" />
+
     </ToolLayout>
   );
 }

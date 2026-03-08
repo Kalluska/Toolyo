@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function RemoveDuplicateLinesPage() {
   const [text, setText] = useState("");
@@ -58,6 +60,13 @@ export default function RemoveDuplicateLinesPage() {
           </div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Remove Duplicate Lines"
+        description="Remove repeated lines from text while keeping unique ones."
+      />
+      <RelatedTools currentSlug="remove-duplicate-lines" />
+
     </ToolLayout>
   );
 }

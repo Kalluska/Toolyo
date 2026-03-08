@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function CaseConverterPage() {
   const [text, setText] = useState("");
@@ -43,6 +45,13 @@ export default function CaseConverterPage() {
           ))}
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Case Converter"
+        description="Convert text to uppercase, lowercase, or title case."
+      />
+      <RelatedTools currentSlug="case-converter" />
+
     </ToolLayout>
   );
 }

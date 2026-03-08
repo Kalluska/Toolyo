@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function MetaDescriptionLengthPage() {
   const [text, setText] = useState("");
@@ -38,6 +40,13 @@ export default function MetaDescriptionLengthPage() {
           </div>
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Meta Description Length Checker"
+        description="Check meta description length instantly."
+      />
+      <RelatedTools currentSlug="meta-description-length" />
+
     </ToolLayout>
   );
 }

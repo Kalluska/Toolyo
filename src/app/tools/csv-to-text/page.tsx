@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function CsvToTextPage() {
   const [text, setText] = useState("");
@@ -31,6 +33,13 @@ export default function CsvToTextPage() {
           className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4"
         />
       </div>
+    
+      <ToolSeoContent
+        title="CSV to Text"
+        description="Convert CSV content into plain text instantly."
+      />
+      <RelatedTools currentSlug="csv-to-text" />
+
     </ToolLayout>
   );
 }

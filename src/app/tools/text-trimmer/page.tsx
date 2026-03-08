@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function TextTrimmer(){
 const [text,setText]=useState("");
@@ -13,6 +15,13 @@ return(
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
 <textarea readOnly value={trimmed} className="border p-4 rounded-xl"/>
 </div>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="Text Trimmer"
+        description="Remove spaces from start and end of text."
+      />
+      <RelatedTools currentSlug="text-trimmer" />
+
+    </ToolLayout>
+  );
 }

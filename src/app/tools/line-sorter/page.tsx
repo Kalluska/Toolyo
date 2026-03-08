@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function LineSorter(){
 const [text,setText]=useState("");
@@ -13,6 +15,13 @@ return(
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
 <textarea readOnly value={sorted} className="border p-4 rounded-xl"/>
 </div>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="Line Sorter"
+        description="Sort lines alphabetically."
+      />
+      <RelatedTools currentSlug="line-sorter" />
+
+    </ToolLayout>
+  );
 }

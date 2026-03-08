@@ -1,6 +1,8 @@
 "use client";
 import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function LoremIpsum(){
 const [count,setCount]=useState(3);
@@ -13,6 +15,13 @@ return(
 <ToolLayout currentSlug="lorem-ipsum" title="Lorem Ipsum Generator" description="Generate dummy text paragraphs instantly.">
 <input type="number" value={count} onChange={(e)=>setCount(Number(e.target.value))} className="border p-2 mb-4"/>
 <textarea readOnly value={paragraphs} className="w-full min-h-[250px] border p-4 rounded-xl"/>
-</ToolLayout>
-);
+
+      <ToolSeoContent
+        title="Lorem Ipsum Generator"
+        description="Generate dummy text paragraphs instantly."
+      />
+      <RelatedTools currentSlug="lorem-ipsum" />
+
+    </ToolLayout>
+  );
 }

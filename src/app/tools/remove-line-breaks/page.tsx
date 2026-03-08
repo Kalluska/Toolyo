@@ -1,6 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import ToolSeoContent from "@/components/tool-seo-content";
+import RelatedTools from "@/components/related-tools";
 
 export default function RemoveLineBreaksPage() {
   const [text, setText] = useState("");
@@ -34,6 +36,13 @@ export default function RemoveLineBreaksPage() {
           />
         </div>
       </div>
+    
+      <ToolSeoContent
+        title="Remove Line Breaks"
+        description="Turn multi-line text into a single clean line."
+      />
+      <RelatedTools currentSlug="remove-line-breaks" />
+
     </ToolLayout>
   );
 }
