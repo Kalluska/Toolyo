@@ -1,0 +1,47 @@
+"use client";
+import { useMemo, useState } from "react";
+import ToolLayout from "@/components/tool-layout";
+
+export default function JsonFormatterPage() {
+  const [jsonInput, setJsonInput] = useState('{\n  "hello": "world"\n}');
+
+  const formattedJson = useMemo(() => {
+    try {
+      return { ok: true, value: JSON.stringify(JSON.parse(jsonInput), null, 2) };
+    } catch (error: unknown) {
+      return {
+        ok: false,
+        value: error instanceof Error ? error.message : "Invalid JSON",
+      };
+    }
+  }, [jsonInput]);
+
+  return (
+    <ToolLayout
+      currentSlug="json-formatter"
+      title="JSON Formatter"
+      description="Format and validate JSON instantly."
+    >
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div>
+          <div className="mb-2 text-sm font-medium">Input JSON</div>
+          <textarea
+            value={jsonInput}
+            onChange={(e) => setJsonInput(e.target.value)}
+            className="min-h-[260px] w-full rounded-2xl border border-zinc-200 p-4 font-mono text-sm"
+          />
+        </div>
+        <div>
+          <div className="mb-2 text-sm font-medium">Output</div>
+          <textarea
+            readOnly
+            value={formattedJson.value}
+            className={`min-h-[260px] w-full rounded-2xl border p-4 font-mono text-sm ${
+              formattedJson.ok ? "border-zinc-200" : "border-red-300 bg-red-50"
+            }`}
+          />
+        </div>
+      </div>
+    </ToolLayout>
+  );
+}

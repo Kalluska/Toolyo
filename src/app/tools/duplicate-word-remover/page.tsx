@@ -1,0 +1,19 @@
+"use client";
+import {useState} from "react";
+import ToolLayout from "@/components/tool-layout";
+
+export default function DuplicateWordRemover(){
+const [text,setText]=useState("");
+
+const words=text.split(" ");
+const unique=[...new Set(words)].join(" ");
+
+return(
+<ToolLayout currentSlug="duplicate-word-remover" title="Duplicate Word Remover" description="Remove duplicate words from text.">
+<div className="grid gap-4 lg:grid-cols-2">
+<textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
+<textarea readOnly value={unique} className="border p-4 rounded-xl"/>
+</div>
+</ToolLayout>
+);
+}
