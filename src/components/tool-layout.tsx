@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import SiteSidebar from "@/components/site-sidebar";
+import SiteFooter from "@/components/site-footer";
 
 type ToolLayoutProps = {
   currentSlug: string;
@@ -89,6 +90,8 @@ export default function ToolLayout({
           {children}
         </main>
       </section>
+
+      <SiteFooter />
     </div>
   );
 }

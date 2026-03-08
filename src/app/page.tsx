@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { tools } from "@/data/tools";
 import SiteSidebar from "@/components/site-sidebar";
+import SiteFooter from "@/components/site-footer";
 
 const categoryIntro: Record<string, { title: string; description: string }> = {
   Text: {
@@ -161,6 +162,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <SiteFooter />
     </div>
   );
 }
