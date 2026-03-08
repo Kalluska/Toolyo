@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { Tool, tools } from "@/data/tools";
+import SiteSidebar from "@/components/site-sidebar";
 
 type ToolLayoutProps = {
   currentSlug: string;
@@ -19,28 +19,6 @@ export default function ToolLayout({
 }: ToolLayoutProps) {
   const [search, setSearch] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const filteredTools = useMemo(() => {
-    const query = search.trim().toLowerCase();
-
-    if (!query) return tools;
-
-    return tools.filter((tool) => {
-      return (
-        tool.name.toLowerCase().includes(query) ||
-        tool.category.toLowerCase().includes(query) ||
-        tool.description.toLowerCase().includes(query)
-      );
-    });
-  }, [search]);
-
-  const groupedTools = useMemo(() => {
-    return filteredTools.reduce<Record<string, Tool[]>>((acc, tool) => {
-      if (!acc[tool.category]) acc[tool.category] = [];
-      acc[tool.category].push(tool);
-      return acc;
-    }, {});
-  }, [filteredTools]);
 
   const schema = {
     "@context": "https://schema.org",
@@ -64,89 +42,13 @@ export default function ToolLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/40"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      <aside
-        className={`fixed left-0 top-0 z-50 h-full w-[320px] transform border-r border-zinc-200 bg-white shadow-xl transition-transform duration-300 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-4">
-          <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">Menu</div>
-            <div className="text-xl font-bold">All Tools</div>
-          </div>
-          <button
-            onClick={() => setSidebarOpen(false)}
-            className="rounded-lg border border-zinc-200 px-3 py-2 text-sm hover:border-zinc-400"
-          >
-            Close
-          </button>
-        </div>
-
-        <div className="h-[calc(100%-73px)] overflow-y-auto p-4">
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search tools..."
-            className="mb-5 w-full rounded-xl border border-zinc-200 px-3 py-2 outline-none focus:border-zinc-400"
-          />
-
-          <div className="space-y-6">
-            {Object.entries(groupedTools).map(([category, categoryTools]) => (
-              <div key={category}>
-                <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
-                  {category}
-                </div>
-                <div className="space-y-2">
-                  {categoryTools.map((tool) => {
-                    const active = tool.slug === currentSlug;
-
-                    return (
-                      <Link
-                        key={tool.slug}
-                        href={`/tools/${tool.slug}`}
-                        onClick={() => setSidebarOpen(false)}
-                        className={`block rounded-xl border px-4 py-3 transition ${
-                          active
-                            ? "border-black bg-black text-white"
-                            : "border-zinc-200 hover:border-zinc-400"
-                        }`}
-                      >
-                        <div
-                          className={`font-semibold ${
-                            active ? "text-white" : "text-zinc-900"
-                          }`}
-                        >
-                          {tool.name}
-                        </div>
-                        <div
-                          className={`mt-1 text-sm ${
-                            active ? "text-zinc-300" : "text-zinc-500"
-                          }`}
-                        >
-                          {tool.description}
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-
-            {filteredTools.length === 0 && (
-              <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-sm text-zinc-500">
-                No tools found.
-              </div>
-            )}
-          </div>
-        </div>
-      </aside>
+      <SiteSidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        search={search}
+        setSearch={setSearch}
+        currentSlug={currentSlug}
+      />
 
       <header className="border-b border-zinc-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
