@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function KeywordCounterPage() {
   const [text, setText] = useState("");
@@ -45,6 +46,7 @@ export default function KeywordCounterPage() {
         title="Keyword Counter"
         description="Count keyword occurrences in text instantly."
       />
+      <ToolFeaturedTools currentSlug="keyword-counter" />
       <RelatedTools currentSlug="keyword-counter" />
 
     </ToolLayout>

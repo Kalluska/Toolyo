@@ -170,6 +170,28 @@ export default function SiteSidebar({
             )}
           </div>
 
+          <div className="mt-8 space-y-3">
+            <a
+              href="mailto:kalle.etelaaho15@gmail.com?subject=Toolyo%20Tool%20Request&body=Hi,%20I%20would%20like%20to%20request%20this%20tool:%20"
+              className="block rounded-xl border border-zinc-200 px-4 py-3 transition hover:border-zinc-400"
+            >
+              <div className="font-semibold">Request a tool</div>
+              <div className="mt-1 text-sm text-zinc-500">
+                Suggest a new tool idea for Toolyo.
+              </div>
+            </a>
+
+            <a
+              href="mailto:kalle.etelaaho15@gmail.com?subject=Toolyo%20Feedback&body=Hi,%20here%20is%20my%20feedback:%20"
+              className="block rounded-xl border border-zinc-200 px-4 py-3 transition hover:border-zinc-400"
+            >
+              <div className="font-semibold">Send feedback</div>
+              <div className="mt-1 text-sm text-zinc-500">
+                Report issues or share improvement ideas.
+              </div>
+            </a>
+          </div>
+
           <div className="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               About Toolyo

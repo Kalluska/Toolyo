@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemoveTabsPage() {
   const [text, setText] = useState("");
@@ -25,6 +26,7 @@ export default function RemoveTabsPage() {
         title="Remove Tabs"
         description="Remove tab characters from text instantly."
       />
+      <ToolFeaturedTools currentSlug="remove-tabs" />
       <RelatedTools currentSlug="remove-tabs" />
 
     </ToolLayout>

@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function JsonFormatterPage() {
   const [jsonInput, setJsonInput] = useState('{\n  "hello": "world"\n}');
@@ -73,6 +74,7 @@ export default function JsonFormatterPage() {
           },
         ]}
       />
+      <ToolFeaturedTools currentSlug="json-formatter" />
       <RelatedTools currentSlug="json-formatter" />
 
     </ToolLayout>

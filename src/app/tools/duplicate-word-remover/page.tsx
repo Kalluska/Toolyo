@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function DuplicateWordRemover(){
 const [text,setText]=useState("");
@@ -21,6 +22,7 @@ return(
         title="Duplicate Word Remover"
         description="Remove duplicate words from text."
       />
+      <ToolFeaturedTools currentSlug="duplicate-word-remover" />
       <RelatedTools currentSlug="duplicate-word-remover" />
 
     </ToolLayout>

@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function HtmlEscape(){
 const [text,setText]=useState("");
@@ -24,6 +25,7 @@ return(
         title="HTML Escape"
         description="Escape HTML special characters."
       />
+      <ToolFeaturedTools currentSlug="html-escape" />
       <RelatedTools currentSlug="html-escape" />
 
     </ToolLayout>

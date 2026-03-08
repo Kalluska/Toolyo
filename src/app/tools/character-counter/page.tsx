@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function CharacterCounterPage() {
   const [text, setText] = useState("");
@@ -79,6 +80,7 @@ export default function CharacterCounterPage() {
           },
         ]}
       />
+      <ToolFeaturedTools currentSlug="character-counter" />
       <RelatedTools currentSlug="character-counter" />
 
     </ToolLayout>

@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function CaseConverterPage() {
   const [text, setText] = useState("");
@@ -74,6 +75,7 @@ export default function CaseConverterPage() {
           },
         ]}
       />
+      <ToolFeaturedTools currentSlug="case-converter" />
       <RelatedTools currentSlug="case-converter" />
 
     </ToolLayout>

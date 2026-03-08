@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function LowercaseConverterPage() {
   const [text, setText] = useState("");
@@ -33,6 +34,7 @@ export default function LowercaseConverterPage() {
         title="Lowercase Converter"
         description="Convert text to lowercase instantly."
       />
+      <ToolFeaturedTools currentSlug="lowercase-converter" />
       <RelatedTools currentSlug="lowercase-converter" />
 
     </ToolLayout>

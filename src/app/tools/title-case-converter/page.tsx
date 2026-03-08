@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function TitleCaseConverterPage() {
   const [text, setText] = useState("");
@@ -35,6 +36,7 @@ export default function TitleCaseConverterPage() {
         title="Title Case Converter"
         description="Convert text to title case instantly."
       />
+      <ToolFeaturedTools currentSlug="title-case-converter" />
       <RelatedTools currentSlug="title-case-converter" />
 
     </ToolLayout>

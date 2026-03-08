@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemoveDuplicateLinesPage() {
   const [text, setText] = useState("");
@@ -89,6 +90,7 @@ export default function RemoveDuplicateLinesPage() {
           },
         ]}
       />
+      <ToolFeaturedTools currentSlug="remove-duplicate-lines" />
       <RelatedTools currentSlug="remove-duplicate-lines" />
 
     </ToolLayout>

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemoveNonAsciiPage() {
   const [text, setText] = useState("");
@@ -33,6 +34,7 @@ export default function RemoveNonAsciiPage() {
         title="Remove Non-ASCII"
         description="Remove non-ASCII characters from text instantly."
       />
+      <ToolFeaturedTools currentSlug="remove-non-ascii" />
       <RelatedTools currentSlug="remove-non-ascii" />
 
     </ToolLayout>

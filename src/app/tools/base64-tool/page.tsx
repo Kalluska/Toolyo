@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function Base64ToolPage() {
   const [text, setText] = useState("Hello world");
@@ -84,6 +85,7 @@ export default function Base64ToolPage() {
           },
         ]}
       />
+      <ToolFeaturedTools currentSlug="base64-tool" />
       <RelatedTools currentSlug="base64-tool" />
 
     </ToolLayout>

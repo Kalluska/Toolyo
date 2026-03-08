@@ -3,6 +3,7 @@ import { useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function ReverseText() {
 const [text,setText]=useState("");
@@ -20,6 +21,7 @@ return(
         title="Reverse Text"
         description="Reverse characters in your text instantly."
       />
+      <ToolFeaturedTools currentSlug="reverse-text" />
       <RelatedTools currentSlug="reverse-text" />
 
     </ToolLayout>

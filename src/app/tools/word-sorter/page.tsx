@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function WordSorter(){
 const [text,setText]=useState("");
@@ -20,6 +21,7 @@ return(
         title="Word Sorter"
         description="Sort words alphabetically."
       />
+      <ToolFeaturedTools currentSlug="word-sorter" />
       <RelatedTools currentSlug="word-sorter" />
 
     </ToolLayout>

@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function LoremIpsum(){
 const [count,setCount]=useState(3);
@@ -20,6 +21,7 @@ return(
         title="Lorem Ipsum Generator"
         description="Generate dummy text paragraphs instantly."
       />
+      <ToolFeaturedTools currentSlug="lorem-ipsum" />
       <RelatedTools currentSlug="lorem-ipsum" />
 
     </ToolLayout>

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemovePunctuationPage() {
   const [text, setText] = useState("");
@@ -27,6 +28,7 @@ export default function RemovePunctuationPage() {
         title="Remove Punctuation"
         description="Remove punctuation from text instantly."
       />
+      <ToolFeaturedTools currentSlug="remove-punctuation" />
       <RelatedTools currentSlug="remove-punctuation" />
 
     </ToolLayout>

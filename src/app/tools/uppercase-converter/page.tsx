@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function UppercaseConverterPage() {
   const [text, setText] = useState("");
@@ -33,6 +34,7 @@ export default function UppercaseConverterPage() {
         title="Uppercase Converter"
         description="Convert text to uppercase instantly."
       />
+      <ToolFeaturedTools currentSlug="uppercase-converter" />
       <RelatedTools currentSlug="uppercase-converter" />
 
     </ToolLayout>

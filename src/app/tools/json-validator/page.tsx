@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function JsonValidator(){
 const [json,setJson]=useState("{}");
@@ -19,6 +20,7 @@ return(
         title="JSON Validator"
         description="Validate JSON data instantly."
       />
+      <ToolFeaturedTools currentSlug="json-validator" />
       <RelatedTools currentSlug="json-validator" />
 
     </ToolLayout>

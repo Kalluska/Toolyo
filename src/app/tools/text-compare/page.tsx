@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 type CompareRow = {
   line: number;
@@ -87,6 +88,7 @@ export default function TextComparePage() {
         title="Text Compare"
         description="Compare two text blocks line by line."
       />
+      <ToolFeaturedTools currentSlug="text-compare" />
       <RelatedTools currentSlug="text-compare" />
 
     </ToolLayout>

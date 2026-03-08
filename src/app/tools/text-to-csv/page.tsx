@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function TextToCsvPage() {
   const [text, setText] = useState("");
@@ -38,6 +39,7 @@ export default function TextToCsvPage() {
         title="Text to CSV"
         description="Convert plain text lines into CSV instantly."
       />
+      <ToolFeaturedTools currentSlug="text-to-csv" />
       <RelatedTools currentSlug="text-to-csv" />
 
     </ToolLayout>

@@ -3,6 +3,7 @@ import {useState} from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function TextTrimmer(){
 const [text,setText]=useState("");
@@ -20,6 +21,7 @@ return(
         title="Text Trimmer"
         description="Remove spaces from start and end of text."
       />
+      <ToolFeaturedTools currentSlug="text-trimmer" />
       <RelatedTools currentSlug="text-trimmer" />
 
     </ToolLayout>

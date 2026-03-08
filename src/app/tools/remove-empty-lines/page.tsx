@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
+import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemoveEmptyLinesPage() {
   const [text, setText] = useState("");
@@ -37,6 +38,7 @@ export default function RemoveEmptyLinesPage() {
         title="Remove Empty Lines"
         description="Remove empty lines from text instantly."
       />
+      <ToolFeaturedTools currentSlug="remove-empty-lines" />
       <RelatedTools currentSlug="remove-empty-lines" />
 
     </ToolLayout>
