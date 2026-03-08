@@ -266,6 +266,105 @@ export const tools: Tool[] = [
     seoTitle: "Remove Non-ASCII",
     seoDescription: "Remove non-ASCII characters from text instantly.",
   },
+
+  {
+    slug: "remove-tabs",
+    name: "Remove Tabs",
+    category: "Text",
+    description: "Remove tab characters from text instantly.",
+    seoTitle: "Remove Tabs",
+    seoDescription: "Remove tab characters from text instantly.",
+  },
+
+  {
+    slug: "paragraph-counter",
+    name: "Paragraph Counter",
+    category: "Text",
+    description: "Count paragraphs in text instantly.",
+    seoTitle: "Paragraph Counter",
+    seoDescription: "Count paragraphs in text instantly.",
+  },
+
+  {
+    slug: "reading-time-calculator",
+    name: "Reading Time Calculator",
+    category: "Text",
+    description: "Estimate reading time from text instantly.",
+    seoTitle: "Reading Time Calculator",
+    seoDescription: "Estimate reading time from text instantly.",
+  },
+
+  {
+    slug: "text-length-counter",
+    name: "Text Length Counter",
+    category: "Text",
+    description: "Count text length instantly.",
+    seoTitle: "Text Length Counter",
+    seoDescription: "Count text length instantly.",
+  },
+
+  {
+    slug: "lowercase-converter",
+    name: "Lowercase Converter",
+    category: "Text",
+    description: "Convert text to lowercase instantly.",
+    seoTitle: "Lowercase Converter",
+    seoDescription: "Convert text to lowercase instantly.",
+  },
+
+  {
+    slug: "uppercase-converter",
+    name: "Uppercase Converter",
+    category: "Text",
+    description: "Convert text to uppercase instantly.",
+    seoTitle: "Uppercase Converter",
+    seoDescription: "Convert text to uppercase instantly.",
+  },
+
+  {
+    slug: "title-case-converter",
+    name: "Title Case Converter",
+    category: "Text",
+    description: "Convert text to title case instantly.",
+    seoTitle: "Title Case Converter",
+    seoDescription: "Convert text to title case instantly.",
+  },
+
+  {
+    slug: "unicode-normalizer",
+    name: "Unicode Normalizer",
+    category: "Developer",
+    description: "Normalize unicode text instantly.",
+    seoTitle: "Unicode Normalizer",
+    seoDescription: "Normalize unicode text instantly.",
+  },
+
+  {
+    slug: "text-to-csv",
+    name: "Text to CSV",
+    category: "Developer",
+    description: "Convert plain text lines into CSV instantly.",
+    seoTitle: "Text to CSV",
+    seoDescription: "Convert plain text lines into CSV instantly.",
+  },
+
+  {
+    slug: "keyword-counter",
+    name: "Keyword Counter",
+    category: "SEO",
+    description: "Count keyword occurrences in text instantly.",
+    seoTitle: "Keyword Counter",
+    seoDescription: "Count keyword occurrences in text instantly.",
+  },
+
+  {
+    slug: "meta-description-length",
+    name: "Meta Description Length Checker",
+    category: "SEO",
+    description: "Check meta description length instantly.",
+    seoTitle: "Meta Description Length Checker",
+    seoDescription: "Check meta description length instantly.",
+  },
 ];
 
 export function getToolBySlug(slug: string) {

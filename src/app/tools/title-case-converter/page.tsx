@@ -3,27 +3,24 @@
 import { useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 
-export default function CsvToTextPage() {
+export default function TitleCaseConverterPage() {
   const [text, setText] = useState("");
 
   const output = useMemo(() => {
-    return text
-      .split(/\r?\n/)
-      .map((line) => line.split(",").map((cell) => cell.trim()).join(" "))
-      .join("\n");
+    return text.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase());
   }, [text]);
 
   return (
     <ToolLayout
-      currentSlug="csv-to-text"
-      title="CSV to Text"
-      description="Convert CSV content into plain text instantly."
+      currentSlug="title-case-converter"
+      title="Title Case Converter"
+      description="Convert text to title case instantly."
     >
       <div className="grid gap-4 lg:grid-cols-2">
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4 font-mono text-sm"
+          className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4"
         />
         <textarea
           readOnly
