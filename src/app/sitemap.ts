@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { tools } from "@/data/tools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://toolyo.com";
+  const baseUrl = "https://toolyo-kappa.vercel.app";
 
   const toolPages = tools.map((tool) => ({
     url: `${baseUrl}/tools/${tool.slug}`,
