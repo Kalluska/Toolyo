@@ -37,9 +37,33 @@ export default function RemoveLineBreaksPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Remove Line Breaks"
         description="Turn multi-line text into a single clean line."
+        about={[
+          "Remove Line Breaks is useful when text has been copied from PDFs, emails, documents, or chat logs and needs to be converted into one continuous line.",
+          "This tool removes manual line breaks and joins broken text into a cleaner single-line result. It is useful for reformatting copied content before pasting it elsewhere.",
+        ]}
+        steps={[
+          "Paste the multi-line text into the input field.",
+          "The tool automatically removes line breaks and joins the content.",
+          "Copy the cleaned output from the output box.",
+        ]}
+        faq={[
+          {
+            question: "When is this tool useful?",
+            answer: "It is especially useful after copying text from PDFs, OCR tools, or formatted documents that insert unwanted line breaks.",
+          },
+          {
+            question: "Does it remove all spacing too?",
+            answer: "No. It mainly removes line breaks and normalizes repeated spaces created by those breaks.",
+          },
+          {
+            question: "Can I use it for SEO text cleanup?",
+            answer: "Yes. It is helpful for cleaning article drafts, descriptions, and imported content.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="remove-line-breaks" />
 

@@ -56,9 +56,33 @@ export default function Base64ToolPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Base64 Encode / Decode"
         description="Encode plain text or decode valid Base64 strings."
+        about={[
+          "Base64 Encode / Decode is useful when you need to convert text into Base64 format or turn Base64 back into readable text.",
+          "This tool helps with quick encoding and decoding tasks in the browser. It is useful for developers, testers, API work, and any workflow where Base64 strings appear.",
+        ]}
+        steps={[
+          "Paste plain text or a Base64 string into the input field.",
+          "Review the encoded and decoded outputs instantly.",
+          "Copy the result you need for your workflow.",
+        ]}
+        faq={[
+          {
+            question: "What is Base64 used for?",
+            answer: "Base64 is commonly used to safely represent text or binary data in systems that expect plain text.",
+          },
+          {
+            question: "Can I decode any text with this tool?",
+            answer: "Only valid Base64 content can be decoded correctly.",
+          },
+          {
+            question: "Who uses Base64 tools?",
+            answer: "Developers, testers, and technical users often use Base64 when working with APIs, tokens, and encoded data.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="base64-tool" />
 

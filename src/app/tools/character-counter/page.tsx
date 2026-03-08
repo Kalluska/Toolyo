@@ -51,9 +51,33 @@ export default function CharacterCounterPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Character Counter"
         description="Count characters, characters without spaces, words, and lines."
+        about={[
+          "Character Counter is useful when you need precise text length, especially for SEO titles, social media captions, ad copy, and short-form writing.",
+          "This tool shows total characters, characters without spaces, words, and lines. It is helpful whenever your content must fit into strict text limits.",
+        ]}
+        steps={[
+          "Paste or type your text into the input box.",
+          "Check total character count and the no-spaces count.",
+          "Trim or rewrite the text until it fits your target.",
+        ]}
+        faq={[
+          {
+            question: "Why count characters without spaces?",
+            answer: "Some platforms and systems treat spaces differently, so the no-spaces count gives you a stricter text measurement.",
+          },
+          {
+            question: "Is this useful for SEO?",
+            answer: "Yes. Character count is important for titles, meta descriptions, and snippet optimization.",
+          },
+          {
+            question: "Does the tool update live?",
+            answer: "Yes. Counts update instantly as you type or edit the text.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="character-counter" />
 

@@ -46,9 +46,33 @@ export default function CaseConverterPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Case Converter"
         description="Convert text to uppercase, lowercase, or title case."
+        about={[
+          "Case Converter helps you quickly change text formatting without retyping anything manually. It is useful for editing titles, normalizing content, and formatting copy for different platforms.",
+          "This tool converts text into uppercase, lowercase, or title case instantly. It is useful for writers, marketers, students, and anyone working with headings or formatted text.",
+        ]}
+        steps={[
+          "Paste or type your text into the input box.",
+          "Review the uppercase, lowercase, and title case results.",
+          "Copy the version you need.",
+        ]}
+        faq={[
+          {
+            question: "What is title case?",
+            answer: "Title case capitalizes the first letter of each word, which is useful for headings and titles.",
+          },
+          {
+            question: "Can I convert long text blocks?",
+            answer: "Yes. The tool works for both short lines and larger text blocks.",
+          },
+          {
+            question: "Why use a case converter?",
+            answer: "It saves time and reduces mistakes when reformatting text manually.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="case-converter" />
 

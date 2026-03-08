@@ -50,9 +50,33 @@ export default function UrlToolPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="URL Encode / Decode"
         description="Encode and decode URL-safe strings instantly."
+        about={[
+          "URL Encode / Decode is useful when links contain special characters, spaces, symbols, or encoded query strings.",
+          "This tool lets you safely encode text for use in URLs and decode already-encoded strings back into readable text. It is useful for developers, marketers, and technical troubleshooting.",
+        ]}
+        steps={[
+          "Paste your text or encoded URL fragment into the input box.",
+          "Check the encoded and decoded results instantly.",
+          "Copy the version you need for links, parameters, or debugging.",
+        ]}
+        faq={[
+          {
+            question: "Why do URLs need encoding?",
+            answer: "Encoding makes sure spaces and special characters are represented safely inside URLs.",
+          },
+          {
+            question: "When would I decode a URL?",
+            answer: "Decoding is useful when you want to read or debug encoded query strings and link parameters.",
+          },
+          {
+            question: "Who uses URL encoding tools?",
+            answer: "Developers, marketers, SEO specialists, and anyone working with links or tracking parameters.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="url-tool" />
 

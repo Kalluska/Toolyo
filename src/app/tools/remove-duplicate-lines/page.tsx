@@ -61,9 +61,33 @@ export default function RemoveDuplicateLinesPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Remove Duplicate Lines"
         description="Remove repeated lines from text while keeping unique ones."
+        about={[
+          "Remove Duplicate Lines is useful for cleaning lists, logs, imported records, keyword sets, and copied datasets that contain repeated lines.",
+          "This tool keeps the first occurrence of each line and removes repeated duplicates. It is useful for text cleanup, data preparation, and reducing clutter in long lists.",
+        ]}
+        steps={[
+          "Paste your line-based text into the input field.",
+          "The tool checks for repeated lines and removes duplicates automatically.",
+          "Copy the unique cleaned output from the result box.",
+        ]}
+        faq={[
+          {
+            question: "Does it preserve the original order?",
+            answer: "Yes. It keeps the first appearance of each unique line in the same order.",
+          },
+          {
+            question: "What kind of text works best?",
+            answer: "It works best with line-separated content such as lists, records, logs, and exported data.",
+          },
+          {
+            question: "Can I use it for keyword cleanup?",
+            answer: "Yes. It is useful for removing duplicate keywords or repeated phrases in lists.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="remove-duplicate-lines" />
 

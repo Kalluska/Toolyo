@@ -41,9 +41,33 @@ export default function SlugGeneratorPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Slug Generator"
         description="Convert text into a clean URL slug."
+        about={[
+          "Slug Generator is useful for blog posts, landing pages, product pages, and any URL that needs to be short, readable, and SEO-friendly.",
+          "This tool converts titles and phrases into clean URL slugs by removing extra characters and replacing spaces with hyphens. It helps keep links organized and easier to understand.",
+        ]}
+        steps={[
+          "Paste or type a title, headline, or phrase into the input box.",
+          "The tool generates a clean slug automatically.",
+          "Copy the slug and use it in your URL or content system.",
+        ]}
+        faq={[
+          {
+            question: "What is a URL slug?",
+            answer: "A slug is the readable part of a URL, usually based on the page title or topic.",
+          },
+          {
+            question: "Why are slugs important for SEO?",
+            answer: "Clean slugs make URLs easier to read and understand for both users and search engines.",
+          },
+          {
+            question: "Does this tool remove special characters?",
+            answer: "Yes. It normalizes the text into a cleaner URL-friendly format.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="slug-generator" />
 

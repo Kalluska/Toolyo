@@ -59,9 +59,33 @@ export default function WordCounterPage() {
         </div>
       </div>
     
+      
       <ToolSeoContent
         title="Word Counter"
         description="Count words, characters, lines, paragraphs, and estimated reading time."
+        about={[
+          "Word Counter is useful for writing, editing, SEO work, school assignments, and social media copy. It gives you a quick overview of text length without needing external software.",
+          "This tool counts words, characters, characters without spaces, lines, paragraphs, and estimated reading time. It is useful when you need to stay within limits or measure the size of a text block accurately.",
+        ]}
+        steps={[
+          "Paste your text into the input box.",
+          "Review the live counts for words, characters, lines, paragraphs, and reading time.",
+          "Edit the text until it matches your target length.",
+        ]}
+        faq={[
+          {
+            question: "What does Word Counter measure?",
+            answer: "It measures words, characters, characters without spaces, lines, paragraphs, and estimated reading time.",
+          },
+          {
+            question: "Who uses a word counter?",
+            answer: "Students, writers, bloggers, marketers, and SEO professionals often use word counters to control text length.",
+          },
+          {
+            question: "Why is reading time useful?",
+            answer: "Reading time helps estimate how long a visitor or reader may spend with your content.",
+          },
+        ]}
       />
       <RelatedTools currentSlug="word-counter" />
 
