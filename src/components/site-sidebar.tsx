@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Tool, tools } from "@/data/tools";
+import ContactModal from "@/components/contact-modal";
 
 type SiteSidebarProps = {
   isOpen: boolean;
@@ -21,6 +22,9 @@ export default function SiteSidebar({
   setSearch,
   currentSlug,
 }: SiteSidebarProps) {
+  const [contactOpen, setContactOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+
   const filteredTools = useMemo(() => {
     const query = search.trim().toLowerCase();
 
@@ -47,6 +51,20 @@ export default function SiteSidebar({
 
   return (
     <>
+      <ContactModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+        title="Contact Toolyo"
+        subject="Toolyo Contact"
+      />
+
+      <ContactModal
+        isOpen={feedbackOpen}
+        onClose={() => setFeedbackOpen(false)}
+        title="Send feedback"
+        subject="Toolyo Feedback"
+      />
+
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-black/40" onClick={onClose} />
       )}
@@ -171,25 +189,25 @@ export default function SiteSidebar({
           </div>
 
           <div className="mt-8 space-y-3">
-            <a
-              href="mailto:kalle.etelaaho15@gmail.com?subject=Toolyo%20Tool%20Request&body=Hi,%20I%20would%20like%20to%20request%20this%20tool:%20"
-              className="block rounded-xl border border-zinc-200 px-4 py-3 transition hover:border-zinc-400"
+            <button
+              onClick={() => setContactOpen(true)}
+              className="block w-full rounded-xl border border-zinc-200 px-4 py-3 text-left transition hover:border-zinc-400"
             >
               <div className="font-semibold">Request a tool</div>
               <div className="mt-1 text-sm text-zinc-500">
                 Suggest a new tool idea for Toolyo.
               </div>
-            </a>
+            </button>
 
-            <a
-              href="mailto:kalle.etelaaho15@gmail.com?subject=Toolyo%20Feedback&body=Hi,%20here%20is%20my%20feedback:%20"
-              className="block rounded-xl border border-zinc-200 px-4 py-3 transition hover:border-zinc-400"
+            <button
+              onClick={() => setFeedbackOpen(true)}
+              className="block w-full rounded-xl border border-zinc-200 px-4 py-3 text-left transition hover:border-zinc-400"
             >
               <div className="font-semibold">Send feedback</div>
               <div className="mt-1 text-sm text-zinc-500">
                 Report issues or share improvement ideas.
               </div>
-            </a>
+            </button>
           </div>
 
           <div className="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
