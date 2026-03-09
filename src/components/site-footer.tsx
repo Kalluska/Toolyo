@@ -37,6 +37,9 @@ export default function SiteFooter() {
               <Link href="/" className="block text-zinc-600 hover:text-zinc-900">
                 Home
               </Link>
+              <Link href="/about" className="block text-zinc-600 hover:text-zinc-900">
+                About
+              </Link>
               <a
                 href="/sitemap.xml"
                 className="block text-zinc-600 hover:text-zinc-900"
@@ -56,15 +59,14 @@ export default function SiteFooter() {
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               Legal
             </div>
-            <div className="mt-3 space-y-2 text-sm text-zinc-600">
-              <p>
-                Privacy Policy: Toolyo does not require user accounts and is designed
-                to keep tools simple and lightweight.
-              </p>
-              <p>
-                Terms of Use: Toolyo is provided as-is for general utility purposes.
-              </p>
-              <p>
+            <div className="mt-3 space-y-2 text-sm">
+              <Link href="/privacy" className="block text-zinc-600 hover:text-zinc-900">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="block text-zinc-600 hover:text-zinc-900">
+                Terms of Use
+              </Link>
+              <p className="text-zinc-600">
                 Always review important output before publishing, submitting, or using
                 it in production systems.
               </p>
