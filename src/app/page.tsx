@@ -26,6 +26,39 @@ const categoryIntro: Record<string, { title: string; description: string }> = {
 
 const featuredSlugs = ["word-counter", "character-counter", "json-formatter"];
 
+const categoryCards = [
+  {
+    title: "Text Tools",
+    href: "/text-tools",
+    description:
+      "Browse text tools for counting, formatting, cleaning, trimming, sorting, and restructuring text.",
+  },
+  {
+    title: "Developer Tools",
+    href: "/developer-tools",
+    description:
+      "Browse developer tools for formatting, validation, parsing, generation, and common technical workflows.",
+  },
+  {
+    title: "SEO Tools",
+    href: "/seo-tools",
+    description:
+      "Browse SEO tools for slugs, keyword checks, metadata support, and search-focused content work.",
+  },
+  {
+    title: "Converters",
+    href: "/converters",
+    description:
+      "Browse converters for text, encoding, timestamps, structured data, URLs, and technical formats.",
+  },
+  {
+    title: "Generators",
+    href: "/generators",
+    description:
+      "Browse generators for passwords, UUIDs, random values, lorem ipsum, gradients, and helper data.",
+  },
+];
+
 export default function HomePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -121,6 +154,24 @@ export default function HomePage() {
                   <div className="text-sm text-zinc-500">{tool.category}</div>
                   <div className="mt-1 text-2xl font-bold">{tool.name}</div>
                   <p className="mt-2 text-sm text-zinc-600">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-10">
+            <div className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-400">
+              Browse by category
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+              {categoryCards.map((category) => (
+                <Link
+                  key={category.href}
+                  href={category.href}
+                  className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5 transition hover:border-zinc-400"
+                >
+                  <div className="text-xl font-bold">{category.title}</div>
+                  <p className="mt-2 text-sm text-zinc-600">{category.description}</p>
                 </Link>
               ))}
             </div>
