@@ -125,7 +125,7 @@ export default function HomePage() {
               built to solve one problem quickly, clearly, and without unnecessary complexity.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-col gap-3 md:flex-row md:items-center">
               <button
                 onClick={() => setSidebarOpen(true)}
                 className="rounded-2xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
@@ -138,7 +138,9 @@ export default function HomePage() {
               >
                 Try Word Counter
               </Link>
-              <HeroSearch />
+              <div className="w-full md:flex-1">
+                <HeroSearch />
+              </div>
             </div>
           </div>
 
