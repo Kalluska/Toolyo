@@ -37,9 +37,10 @@ export default function SiteSidebar({
       .filter(Boolean) as Tool[];
   }, [recentSlugs]);
 
-  const filteredTools = useMemo(() => {
-    const query = search.trim().toLowerCase();
+  const query = search.trim().toLowerCase();
+  const isSearching = query.length > 0;
 
+  const filteredTools = useMemo(() => {
     if (!query) return tools;
 
     return tools.filter((tool) => {
@@ -49,15 +50,15 @@ export default function SiteSidebar({
         tool.description.toLowerCase().includes(query)
       );
     });
-  }, [search]);
+  }, [query]);
 
   const groupedTools = useMemo(() => {
-    return filteredTools.reduce<Record<string, Tool[]>>((acc, tool) => {
+    return tools.reduce<Record<string, Tool[]>>((acc, tool) => {
       if (!acc[tool.category]) acc[tool.category] = [];
       acc[tool.category].push(tool);
       return acc;
     }, {});
-  }, [filteredTools]);
+  }, []);
 
   return (
     <>
@@ -118,7 +119,51 @@ export default function SiteSidebar({
             className="mb-6 w-full rounded-xl border border-zinc-200 px-3 py-2 outline-none focus:border-zinc-400"
           />
 
-          {recentTools.length > 0 && (
+          {isSearching && (
+            <div className="mb-6">
+              <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+                Search results
+              </div>
+
+              {filteredTools.length > 0 ? (
+                <div className="space-y-2">
+                  {filteredTools.map((tool) => {
+                    const active = tool.slug === currentSlug;
+
+                    return (
+                      <Link
+                        key={tool.slug}
+                        href={`/tools/${tool.slug}`}
+                        onClick={onClose}
+                        className={`block rounded-xl border px-4 py-3 transition ${
+                          active
+                            ? "border-black bg-black text-white"
+                            : "border-zinc-200 hover:border-zinc-400"
+                        }`}
+                      >
+                        <div className={`font-semibold ${active ? "text-white" : "text-zinc-900"}`}>
+                          {tool.name}
+                        </div>
+                        <div
+                          className={`mt-1 text-sm ${
+                            active ? "text-zinc-300" : "text-zinc-500"
+                          }`}
+                        >
+                          {tool.description}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-sm text-zinc-500">
+                  No tools found.
+                </div>
+              )}
+            </div>
+          )}
+
+          {!isSearching && recentTools.length > 0 && (
             <div className="mb-6">
               <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
                 Recently used
@@ -155,50 +200,46 @@ export default function SiteSidebar({
             </div>
           )}
 
-          <div className="space-y-6">
-            {Object.entries(groupedTools).map(([category, categoryTools]) => (
-              <div key={category}>
-                <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
-                  {category}
-                </div>
-                <div className="space-y-2">
-                  {categoryTools.map((tool) => {
-                    const active = tool.slug === currentSlug;
+          {!isSearching && (
+            <div className="space-y-6">
+              {Object.entries(groupedTools).map(([category, categoryTools]) => (
+                <div key={category}>
+                  <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+                    {category}
+                  </div>
+                  <div className="space-y-2">
+                    {categoryTools.map((tool) => {
+                      const active = tool.slug === currentSlug;
 
-                    return (
-                      <Link
-                        key={tool.slug}
-                        href={`/tools/${tool.slug}`}
-                        onClick={onClose}
-                        className={`block rounded-xl border px-4 py-3 transition ${
-                          active
-                            ? "border-black bg-black text-white"
-                            : "border-zinc-200 hover:border-zinc-400"
-                        }`}
-                      >
-                        <div className={`font-semibold ${active ? "text-white" : "text-zinc-900"}`}>
-                          {tool.name}
-                        </div>
-                        <div
-                          className={`mt-1 text-sm ${
-                            active ? "text-zinc-300" : "text-zinc-500"
+                      return (
+                        <Link
+                          key={tool.slug}
+                          href={`/tools/${tool.slug}`}
+                          onClick={onClose}
+                          className={`block rounded-xl border px-4 py-3 transition ${
+                            active
+                              ? "border-black bg-black text-white"
+                              : "border-zinc-200 hover:border-zinc-400"
                           }`}
                         >
-                          {tool.description}
-                        </div>
-                      </Link>
-                    );
-                  })}
+                          <div className={`font-semibold ${active ? "text-white" : "text-zinc-900"}`}>
+                            {tool.name}
+                          </div>
+                          <div
+                            className={`mt-1 text-sm ${
+                              active ? "text-zinc-300" : "text-zinc-500"
+                            }`}
+                          >
+                            {tool.description}
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
-
-            {filteredTools.length === 0 && (
-              <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-sm text-zinc-500">
-                No tools found.
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="mt-8 space-y-3">
             <button
