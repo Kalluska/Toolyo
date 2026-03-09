@@ -545,6 +545,348 @@ export const tools: Tool[] = [
     seoTitle: "Regex Tester",
     seoDescription: "Test regular expressions instantly.",
   },
+
+  {
+    slug: "ascii-to-text",
+    name: "ASCII to Text",
+    category: "Developer",
+    description: "Convert ASCII codes to readable text instantly.",
+    seoTitle: "ASCII to Text",
+    seoDescription: "Convert ASCII codes to readable text instantly.",
+  },
+
+  {
+    slug: "text-to-ascii",
+    name: "Text to ASCII",
+    category: "Developer",
+    description: "Convert text to ASCII codes instantly.",
+    seoTitle: "Text to ASCII",
+    seoDescription: "Convert text to ASCII codes instantly.",
+  },
+
+  {
+    slug: "binary-to-decimal",
+    name: "Binary to Decimal",
+    category: "Developer",
+    description: "Convert binary numbers to decimal instantly.",
+    seoTitle: "Binary to Decimal",
+    seoDescription: "Convert binary numbers to decimal instantly.",
+  },
+
+  {
+    slug: "decimal-to-binary",
+    name: "Decimal to Binary",
+    category: "Developer",
+    description: "Convert decimal numbers to binary instantly.",
+    seoTitle: "Decimal to Binary",
+    seoDescription: "Convert decimal numbers to binary instantly.",
+  },
+
+  {
+    slug: "decimal-to-hex",
+    name: "Decimal to Hex",
+    category: "Developer",
+    description: "Convert decimal numbers to hexadecimal instantly.",
+    seoTitle: "Decimal to Hex",
+    seoDescription: "Convert decimal numbers to hexadecimal instantly.",
+  },
+
+  {
+    slug: "hex-to-decimal",
+    name: "Hex to Decimal",
+    category: "Developer",
+    description: "Convert hexadecimal values to decimal instantly.",
+    seoTitle: "Hex to Decimal",
+    seoDescription: "Convert hexadecimal values to decimal instantly.",
+  },
+
+  {
+    slug: "hex-to-rgb",
+    name: "Hex to RGB",
+    category: "Developer",
+    description: "Convert HEX colors to RGB instantly.",
+    seoTitle: "Hex to RGB",
+    seoDescription: "Convert HEX colors to RGB instantly.",
+  },
+
+  {
+    slug: "rgb-to-hex",
+    name: "RGB to HEX",
+    category: "Developer",
+    description: "Convert RGB colors to HEX instantly.",
+    seoTitle: "RGB to HEX",
+    seoDescription: "Convert RGB colors to HEX instantly.",
+  },
+
+  {
+    slug: "hex-to-hsl",
+    name: "HEX to HSL",
+    category: "Developer",
+    description: "Convert HEX colors to HSL instantly.",
+    seoTitle: "HEX to HSL",
+    seoDescription: "Convert HEX colors to HSL instantly.",
+  },
+
+  {
+    slug: "hsl-to-hex",
+    name: "HSL to HEX",
+    category: "Developer",
+    description: "Convert HSL colors to HEX instantly.",
+    seoTitle: "HSL to HEX",
+    seoDescription: "Convert HSL colors to HEX instantly.",
+  },
+
+  {
+    slug: "color-contrast-checker",
+    name: "Color Contrast Checker",
+    category: "Developer",
+    description: "Check color contrast ratios instantly.",
+    seoTitle: "Color Contrast Checker",
+    seoDescription: "Check color contrast ratios instantly.",
+  },
+
+  {
+    slug: "css-gradient-generator",
+    name: "CSS Gradient Generator",
+    category: "Developer",
+    description: "Generate CSS gradients instantly.",
+    seoTitle: "CSS Gradient Generator",
+    seoDescription: "Generate CSS gradients instantly.",
+  },
+
+  {
+    slug: "markdown-to-html",
+    name: "Markdown to HTML",
+    category: "Developer",
+    description: "Convert Markdown to HTML instantly.",
+    seoTitle: "Markdown to HTML",
+    seoDescription: "Convert Markdown to HTML instantly.",
+  },
+
+  {
+    slug: "html-to-markdown",
+    name: "HTML to Markdown",
+    category: "Developer",
+    description: "Convert HTML to Markdown instantly.",
+    seoTitle: "HTML to Markdown",
+    seoDescription: "Convert HTML to Markdown instantly.",
+  },
+
+  {
+    slug: "xml-formatter",
+    name: "XML Formatter",
+    category: "Developer",
+    description: "Format XML code instantly.",
+    seoTitle: "XML Formatter",
+    seoDescription: "Format XML code instantly.",
+  },
+
+  {
+    slug: "xml-validator",
+    name: "XML Validator",
+    category: "Developer",
+    description: "Validate XML instantly.",
+    seoTitle: "XML Validator",
+    seoDescription: "Validate XML instantly.",
+  },
+
+  {
+    slug: "json-to-xml",
+    name: "JSON to XML",
+    category: "Developer",
+    description: "Convert JSON data to XML instantly.",
+    seoTitle: "JSON to XML",
+    seoDescription: "Convert JSON data to XML instantly.",
+  },
+
+  {
+    slug: "xml-to-json",
+    name: "XML to JSON",
+    category: "Developer",
+    description: "Convert XML data to JSON instantly.",
+    seoTitle: "XML to JSON",
+    seoDescription: "Convert XML data to JSON instantly.",
+  },
+
+  {
+    slug: "yaml-formatter",
+    name: "YAML Formatter",
+    category: "Developer",
+    description: "Format YAML instantly.",
+    seoTitle: "YAML Formatter",
+    seoDescription: "Format YAML instantly.",
+  },
+
+  {
+    slug: "sql-formatter",
+    name: "SQL Formatter",
+    category: "Developer",
+    description: "Format SQL queries instantly.",
+    seoTitle: "SQL Formatter",
+    seoDescription: "Format SQL queries instantly.",
+  },
+
+  {
+    slug: "sql-minifier",
+    name: "SQL Minifier",
+    category: "Developer",
+    description: "Minify SQL queries instantly.",
+    seoTitle: "SQL Minifier",
+    seoDescription: "Minify SQL queries instantly.",
+  },
+
+  {
+    slug: "html-prettifier",
+    name: "HTML Prettifier",
+    category: "Developer",
+    description: "Prettify HTML code instantly.",
+    seoTitle: "HTML Prettifier",
+    seoDescription: "Prettify HTML code instantly.",
+  },
+
+  {
+    slug: "css-prettifier",
+    name: "CSS Prettifier",
+    category: "Developer",
+    description: "Prettify CSS code instantly.",
+    seoTitle: "CSS Prettifier",
+    seoDescription: "Prettify CSS code instantly.",
+  },
+
+  {
+    slug: "js-prettifier",
+    name: "JavaScript Prettifier",
+    category: "Developer",
+    description: "Prettify JavaScript code instantly.",
+    seoTitle: "JavaScript Prettifier",
+    seoDescription: "Prettify JavaScript code instantly.",
+  },
+
+  {
+    slug: "base32-encoder",
+    name: "Base32 Encoder",
+    category: "Developer",
+    description: "Encode text to Base32 instantly.",
+    seoTitle: "Base32 Encoder",
+    seoDescription: "Encode text to Base32 instantly.",
+  },
+
+  {
+    slug: "base32-decoder",
+    name: "Base32 Decoder",
+    category: "Developer",
+    description: "Decode Base32 strings instantly.",
+    seoTitle: "Base32 Decoder",
+    seoDescription: "Decode Base32 strings instantly.",
+  },
+
+  {
+    slug: "rot13-encoder",
+    name: "ROT13 Encoder",
+    category: "Developer",
+    description: "Encode text with ROT13 instantly.",
+    seoTitle: "ROT13 Encoder",
+    seoDescription: "Encode text with ROT13 instantly.",
+  },
+
+  {
+    slug: "rot13-decoder",
+    name: "ROT13 Decoder",
+    category: "Developer",
+    description: "Decode ROT13 text instantly.",
+    seoTitle: "ROT13 Decoder",
+    seoDescription: "Decode ROT13 text instantly.",
+  },
+
+  {
+    slug: "query-string-parser",
+    name: "Query String Parser",
+    category: "Developer",
+    description: "Parse URL query strings instantly.",
+    seoTitle: "Query String Parser",
+    seoDescription: "Parse URL query strings instantly.",
+  },
+
+  {
+    slug: "query-string-builder",
+    name: "Query String Builder",
+    category: "Developer",
+    description: "Build URL query strings instantly.",
+    seoTitle: "Query String Builder",
+    seoDescription: "Build URL query strings instantly.",
+  },
+
+  {
+    slug: "url-parser",
+    name: "URL Parser",
+    category: "Developer",
+    description: "Parse URLs into components instantly.",
+    seoTitle: "URL Parser",
+    seoDescription: "Parse URLs into components instantly.",
+  },
+
+  {
+    slug: "url-validator",
+    name: "URL Validator",
+    category: "Developer",
+    description: "Validate URLs instantly.",
+    seoTitle: "URL Validator",
+    seoDescription: "Validate URLs instantly.",
+  },
+
+  {
+    slug: "email-validator",
+    name: "Email Validator",
+    category: "Developer",
+    description: "Validate email addresses instantly.",
+    seoTitle: "Email Validator",
+    seoDescription: "Validate email addresses instantly.",
+  },
+
+  {
+    slug: "domain-extractor",
+    name: "Domain Extractor",
+    category: "Developer",
+    description: "Extract domain names from text instantly.",
+    seoTitle: "Domain Extractor",
+    seoDescription: "Extract domain names from text instantly.",
+  },
+
+  {
+    slug: "link-extractor",
+    name: "Link Extractor",
+    category: "Text",
+    description: "Extract links from text instantly.",
+    seoTitle: "Link Extractor",
+    seoDescription: "Extract links from text instantly.",
+  },
+
+  {
+    slug: "timestamp-converter",
+    name: "Timestamp Converter",
+    category: "Developer",
+    description: "Convert Unix timestamps instantly.",
+    seoTitle: "Timestamp Converter",
+    seoDescription: "Convert Unix timestamps instantly.",
+  },
+
+  {
+    slug: "timestamp-now",
+    name: "Current Timestamp",
+    category: "Developer",
+    description: "Get the current Unix timestamp instantly.",
+    seoTitle: "Current Timestamp",
+    seoDescription: "Get the current Unix timestamp instantly.",
+  },
+
+  {
+    slug: "password-strength-checker",
+    name: "Password Strength Checker",
+    category: "Developer",
+    description: "Check password strength instantly.",
+    seoTitle: "Password Strength Checker",
+    seoDescription: "Check password strength instantly.",
+  },
 ];
 
 export function getToolBySlug(slug: string) {
