@@ -1,6 +1,7 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
@@ -13,6 +14,10 @@ type CompareRow = {
 };
 
 export default function TextComparePage() {
+  useEffect(() => {
+    addRecentTool("text-compare");
+  }, []);
+
   const [compareA, setCompareA] = useState("Line one\nLine two\nLine three");
   const [compareB, setCompareB] = useState("Line one\nLine too\nLine three");
 

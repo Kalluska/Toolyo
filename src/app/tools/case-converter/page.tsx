@@ -1,11 +1,16 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function CaseConverterPage() {
+  useEffect(() => {
+    addRecentTool("case-converter");
+  }, []);
+
   const [text, setText] = useState("");
 
   const upper = useMemo(() => text.toUpperCase(), [text]);

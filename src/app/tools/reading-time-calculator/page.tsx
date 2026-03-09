@@ -1,12 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function ReadingTimeCalculatorPage() {
+  useEffect(() => {
+    addRecentTool("reading-time-calculator");
+  }, []);
+
   const [text, setText] = useState("");
 
   const { words, minutes } = useMemo(() => {

@@ -1,12 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
+import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 
 export default function RemoveNonAsciiPage() {
+  useEffect(() => {
+    addRecentTool("remove-non-ascii");
+  }, []);
+
   const [text, setText] = useState("");
 
   const output = useMemo(() => text.replace(/[^\x00-\x7F]/g, ""), [text]);

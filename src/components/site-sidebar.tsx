@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Tool, tools } from "@/data/tools";
 import ContactModal from "@/components/contact-modal";
+import { getRecentTools } from "@/lib/recentTools";
 
 type SiteSidebarProps = {
   isOpen: boolean;
@@ -12,8 +13,6 @@ type SiteSidebarProps = {
   setSearch: (value: string) => void;
   currentSlug?: string;
 };
-
-const featuredSlugs = ["word-counter", "character-counter", "json-formatter"];
 
 export default function SiteSidebar({
   isOpen,
@@ -24,6 +23,19 @@ export default function SiteSidebar({
 }: SiteSidebarProps) {
   const [contactOpen, setContactOpen] = useState(false);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [recentSlugs, setRecentSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setRecentSlugs(getRecentTools());
+    }
+  }, [isOpen, currentSlug]);
+
+  const recentTools = useMemo(() => {
+    return recentSlugs
+      .map((slug) => tools.find((tool) => tool.slug === slug))
+      .filter(Boolean) as Tool[];
+  }, [recentSlugs]);
 
   const filteredTools = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -46,8 +58,6 @@ export default function SiteSidebar({
       return acc;
     }, {});
   }, [filteredTools]);
-
-  const featuredTools = tools.filter((tool) => featuredSlugs.includes(tool.slug));
 
   return (
     <>
@@ -108,40 +118,42 @@ export default function SiteSidebar({
             className="mb-6 w-full rounded-xl border border-zinc-200 px-3 py-2 outline-none focus:border-zinc-400"
           />
 
-          <div className="mb-6">
-            <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
-              Most used tools
-            </div>
-            <div className="space-y-2">
-              {featuredTools.map((tool) => {
-                const active = tool.slug === currentSlug;
+          {recentTools.length > 0 && (
+            <div className="mb-6">
+              <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+                Recently used
+              </div>
+              <div className="space-y-2">
+                {recentTools.map((tool) => {
+                  const active = tool.slug === currentSlug;
 
-                return (
-                  <Link
-                    key={tool.slug}
-                    href={`/tools/${tool.slug}`}
-                    onClick={onClose}
-                    className={`block rounded-xl border px-4 py-3 transition ${
-                      active
-                        ? "border-black bg-black text-white"
-                        : "border-zinc-200 hover:border-zinc-400"
-                    }`}
-                  >
-                    <div className={`font-semibold ${active ? "text-white" : "text-zinc-900"}`}>
-                      {tool.name}
-                    </div>
-                    <div
-                      className={`mt-1 text-sm ${
-                        active ? "text-zinc-300" : "text-zinc-500"
+                  return (
+                    <Link
+                      key={tool.slug}
+                      href={`/tools/${tool.slug}`}
+                      onClick={onClose}
+                      className={`block rounded-xl border px-4 py-3 transition ${
+                        active
+                          ? "border-black bg-black text-white"
+                          : "border-zinc-200 hover:border-zinc-400"
                       }`}
                     >
-                      {tool.description}
-                    </div>
-                  </Link>
-                );
-              })}
+                      <div className={`font-semibold ${active ? "text-white" : "text-zinc-900"}`}>
+                        {tool.name}
+                      </div>
+                      <div
+                        className={`mt-1 text-sm ${
+                          active ? "text-zinc-300" : "text-zinc-500"
+                        }`}
+                      >
+                        {tool.description}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="space-y-6">
             {Object.entries(groupedTools).map(([category, categoryTools]) => (

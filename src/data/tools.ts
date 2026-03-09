@@ -365,6 +365,186 @@ export const tools: Tool[] = [
     seoTitle: "Meta Description Length Checker",
     seoDescription: "Check meta description length instantly.",
   },
+
+  {
+    slug: "keyword-density-checker",
+    name: "Keyword Density Checker",
+    category: "SEO",
+    description: "Check keyword density in text instantly.",
+    seoTitle: "Keyword Density Checker",
+    seoDescription: "Check keyword density in text instantly.",
+  },
+
+  {
+    slug: "text-diff",
+    name: "Text Diff Checker",
+    category: "Text",
+    description: "Compare differences between two text blocks instantly.",
+    seoTitle: "Text Diff Checker",
+    seoDescription: "Compare differences between two text blocks instantly.",
+  },
+
+  {
+    slug: "html-minifier",
+    name: "HTML Minifier",
+    category: "Developer",
+    description: "Minify HTML code instantly.",
+    seoTitle: "HTML Minifier",
+    seoDescription: "Minify HTML code instantly.",
+  },
+
+  {
+    slug: "css-minifier",
+    name: "CSS Minifier",
+    category: "Developer",
+    description: "Minify CSS code instantly.",
+    seoTitle: "CSS Minifier",
+    seoDescription: "Minify CSS code instantly.",
+  },
+
+  {
+    slug: "js-minifier",
+    name: "JavaScript Minifier",
+    category: "Developer",
+    description: "Minify JavaScript code instantly.",
+    seoTitle: "JavaScript Minifier",
+    seoDescription: "Minify JavaScript code instantly.",
+  },
+
+  {
+    slug: "uuid-generator",
+    name: "UUID Generator",
+    category: "Developer",
+    description: "Generate UUID values instantly.",
+    seoTitle: "UUID Generator",
+    seoDescription: "Generate UUID values instantly.",
+  },
+
+  {
+    slug: "password-generator",
+    name: "Password Generator",
+    category: "Developer",
+    description: "Generate strong passwords instantly.",
+    seoTitle: "Password Generator",
+    seoDescription: "Generate strong passwords instantly.",
+  },
+
+  {
+    slug: "json-to-csv",
+    name: "JSON to CSV",
+    category: "Developer",
+    description: "Convert JSON data to CSV instantly.",
+    seoTitle: "JSON to CSV",
+    seoDescription: "Convert JSON data to CSV instantly.",
+  },
+
+  {
+    slug: "csv-to-json",
+    name: "CSV to JSON",
+    category: "Developer",
+    description: "Convert CSV data to JSON instantly.",
+    seoTitle: "CSV to JSON",
+    seoDescription: "Convert CSV data to JSON instantly.",
+  },
+
+  {
+    slug: "lorem-ipsum-generator",
+    name: "Lorem Ipsum Generator",
+    category: "Text",
+    description: "Generate lorem ipsum placeholder text instantly.",
+    seoTitle: "Lorem Ipsum Generator",
+    seoDescription: "Generate lorem ipsum placeholder text instantly.",
+  },
+
+  {
+    slug: "binary-to-text",
+    name: "Binary to Text",
+    category: "Developer",
+    description: "Convert binary to readable text instantly.",
+    seoTitle: "Binary to Text",
+    seoDescription: "Convert binary to readable text instantly.",
+  },
+
+  {
+    slug: "text-to-binary",
+    name: "Text to Binary",
+    category: "Developer",
+    description: "Convert text to binary instantly.",
+    seoTitle: "Text to Binary",
+    seoDescription: "Convert text to binary instantly.",
+  },
+
+  {
+    slug: "json-to-yaml",
+    name: "JSON to YAML",
+    category: "Developer",
+    description: "Convert JSON to YAML instantly.",
+    seoTitle: "JSON to YAML",
+    seoDescription: "Convert JSON to YAML instantly.",
+  },
+
+  {
+    slug: "yaml-to-json",
+    name: "YAML to JSON",
+    category: "Developer",
+    description: "Convert YAML to JSON instantly.",
+    seoTitle: "YAML to JSON",
+    seoDescription: "Convert YAML to JSON instantly.",
+  },
+
+  {
+    slug: "random-number-generator",
+    name: "Random Number Generator",
+    category: "Developer",
+    description: "Generate random numbers instantly.",
+    seoTitle: "Random Number Generator",
+    seoDescription: "Generate random numbers instantly.",
+  },
+
+  {
+    slug: "line-counter",
+    name: "Line Counter",
+    category: "Text",
+    description: "Count lines in text instantly.",
+    seoTitle: "Line Counter",
+    seoDescription: "Count lines in text instantly.",
+  },
+
+  {
+    slug: "remove-html-tags",
+    name: "Remove HTML Tags",
+    category: "Text",
+    description: "Remove HTML tags from text instantly.",
+    seoTitle: "Remove HTML Tags",
+    seoDescription: "Remove HTML tags from text instantly.",
+  },
+
+  {
+    slug: "case-swapper",
+    name: "Case Swapper",
+    category: "Text",
+    description: "Swap uppercase and lowercase letters instantly.",
+    seoTitle: "Case Swapper",
+    seoDescription: "Swap uppercase and lowercase letters instantly.",
+  },
+
+  {
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    category: "Developer",
+    description: "Decode JWT tokens instantly.",
+    seoTitle: "JWT Decoder",
+    seoDescription: "Decode JWT tokens instantly.",
+  },
+
+  {
+    slug: "regex-tester",
+    name: "Regex Tester",
+    category: "Developer",
+    description: "Test regular expressions instantly.",
+    seoTitle: "Regex Tester",
+    seoDescription: "Test regular expressions instantly.",
+  },
 ];
 
 export function getToolBySlug(slug: string) {
