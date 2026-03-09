@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GoogleAnalytics from "@/components/google-analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://toolyo-kappa.vercel.app"),
@@ -47,7 +48,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics />{children}</body>
     </html>
   );
 }
