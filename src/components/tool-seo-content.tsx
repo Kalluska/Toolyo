@@ -1,6 +1,9 @@
+import { toolSeoContentMap } from "@/lib/toolSeoContentMap";
+
 type ToolSeoContentProps = {
   title: string;
   description: string;
+  slug?: string;
   about?: string[];
   steps?: string[];
   faq?: { question: string; answer: string }[];
@@ -9,17 +12,20 @@ type ToolSeoContentProps = {
 export default function ToolSeoContent({
   title,
   description,
+  slug,
   about,
   steps,
   faq,
 }: ToolSeoContentProps) {
+  const mapped = slug ? toolSeoContentMap[slug] : undefined;
+
   const defaultAbout = [
-    `${title} helps you work with text quickly in your browser without installing anything. This free online tool is built for speed, simplicity, and everyday use.`,
+    `${title} helps you work with text or structured data quickly in your browser without installing anything. This free online tool is built for speed, simplicity, and everyday use.`,
     description,
   ];
 
   const defaultSteps = [
-    "Paste or type your text into the input field.",
+    "Paste or type your content into the input field.",
     "Adjust any available settings if the tool has options.",
     "Copy the result from the output area instantly.",
   ];
@@ -30,20 +36,40 @@ export default function ToolSeoContent({
       answer: `Yes. ${title} is free to use in your browser.`,
     },
     {
-      question: "Does this tool upload my text?",
+      question: "Does this tool upload my content?",
       answer:
         "Most Toolyo tools are designed to work directly in the browser for speed and simplicity.",
     },
     {
       question: "Who is this tool for?",
       answer:
-        "This tool is useful for writers, students, marketers, developers, and anyone who needs quick text processing online.",
+        "This tool is useful for writers, students, marketers, developers, and anyone who needs quick online utility workflows.",
     },
   ];
 
-  const finalAbout = about && about.length > 0 ? about : defaultAbout;
-  const finalSteps = steps && steps.length > 0 ? steps : defaultSteps;
-  const finalFaq = faq && faq.length > 0 ? faq : defaultFaq;
+  const finalAbout =
+    about && about.length > 0
+      ? about
+      : mapped?.about
+        ? [mapped.about, description]
+        : defaultAbout;
+
+  const finalSteps =
+    steps && steps.length > 0
+      ? steps
+      : mapped?.steps && mapped.steps.length > 0
+        ? mapped.steps
+        : defaultSteps;
+
+  const finalFaq =
+    faq && faq.length > 0
+      ? faq
+      : mapped?.faq && mapped.faq.length > 0
+        ? mapped.faq.map((item) => ({
+            question: item.q,
+            answer: item.a,
+          }))
+        : defaultFaq;
 
   return (
     <section className="mt-8 space-y-6">
@@ -67,7 +93,6 @@ export default function ToolSeoContent({
 
       <div className="rounded-2xl border border-zinc-200 p-6">
         <h3 className="text-2xl font-bold">FAQ</h3>
-
         <div className="mt-4 space-y-4">
           {finalFaq.map((item, index) => (
             <div key={index}>

@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function JsonFormatterPage() {
+  const title = "JSON Formatter";
+  const description = "Format and validate JSON instantly.";
+
   useEffect(() => {
     addRecentTool("json-formatter");
   }, []);
@@ -36,8 +39,8 @@ export default function JsonFormatterPage() {
   return (
     <ToolLayout
       currentSlug="json-formatter"
-      title="JSON Formatter"
-      description="Format and validate JSON instantly."
+      title={title}
+      description={description}
     >
       <div className="space-y-4">
         <div className="grid gap-4 lg:grid-cols-2">

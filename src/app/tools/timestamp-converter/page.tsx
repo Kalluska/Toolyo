@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function TimestampConverterPage() {
+  const title = "Timestamp Converter";
+  const description = "Convert Unix timestamps instantly.";
+
   useEffect(() => {
     addRecentTool("timestamp-converter");
   }, []);
@@ -36,8 +39,8 @@ export default function TimestampConverterPage() {
   return (
     <ToolLayout
       currentSlug="timestamp-converter"
-      title="Timestamp Converter"
-      description="Convert Unix timestamps instantly."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <input
@@ -69,7 +72,7 @@ export default function TimestampConverterPage() {
         )}
       </div>
 
-      <ToolSeoContent title="Timestamp Converter" description="Convert Unix timestamps instantly." />
+      <ToolSeoContent title="{title}" description="{description}" slug="timestamp-converter" />
       <ToolFeaturedTools currentSlug="timestamp-converter" />
       <RelatedTools currentSlug="timestamp-converter" />
     </ToolLayout>

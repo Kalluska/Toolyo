@@ -12,6 +12,9 @@ function randomChar(chars: string) {
 }
 
 export default function PasswordGeneratorPage() {
+  const title = "Password Generator";
+  const description = "Generate secure passwords instantly.";
+
   useEffect(() => {
     addRecentTool("password-generator");
   }, []);
@@ -90,8 +93,8 @@ export default function PasswordGeneratorPage() {
   return (
     <ToolLayout
       currentSlug="password-generator"
-      title="Password Generator"
-      description="Generate secure passwords instantly."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2">

@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function UrlParserPage() {
+  const title = "URL Parser";
+  const description = "Parse URLs into components instantly.";
+
   useEffect(() => {
     addRecentTool("url-parser");
   }, []);
@@ -35,8 +38,8 @@ export default function UrlParserPage() {
   return (
     <ToolLayout
       currentSlug="url-parser"
-      title="URL Parser"
-      description="Parse URLs into components instantly."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <input
@@ -63,7 +66,7 @@ export default function UrlParserPage() {
         )}
       </div>
 
-      <ToolSeoContent title="URL Parser" description="Parse URLs into components instantly." />
+      <ToolSeoContent title="{title}" description="{description}" slug="url-parser" />
       <ToolFeaturedTools currentSlug="url-parser" />
       <RelatedTools currentSlug="url-parser" />
     </ToolLayout>

@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function CharacterCounterPage() {
+  const title = "Character Counter";
+  const description = "Count characters, characters without spaces, words, and lines.";
+
   useEffect(() => {
     addRecentTool("character-counter");
   }, []);
@@ -26,8 +29,8 @@ export default function CharacterCounterPage() {
   return (
     <ToolLayout
       currentSlug="character-counter"
-      title="Character Counter"
-      description="Count characters, characters without spaces, words, and lines."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <textarea

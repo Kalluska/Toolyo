@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function PasswordStrengthCheckerPage() {
+  const title = "Password Strength Checker";
+  const description = "Check password strength instantly.";
+
   useEffect(() => {
     addRecentTool("password-strength-checker");
   }, []);
@@ -46,8 +49,8 @@ export default function PasswordStrengthCheckerPage() {
   return (
     <ToolLayout
       currentSlug="password-strength-checker"
-      title="Password Strength Checker"
-      description="Check password strength instantly."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <textarea
@@ -73,7 +76,7 @@ export default function PasswordStrengthCheckerPage() {
         </div>
       </div>
 
-      <ToolSeoContent title="Password Strength Checker" description="Check password strength instantly." />
+      <ToolSeoContent title="{title}" description="{description}" slug="password-strength-checker" />
       <ToolFeaturedTools currentSlug="password-strength-checker" />
       <RelatedTools currentSlug="password-strength-checker" />
     </ToolLayout>

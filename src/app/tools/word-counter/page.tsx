@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function WordCounterPage() {
+  const title = "Word Counter";
+  const description = "Count words, characters, lines, paragraphs, and estimated reading time.";
+
   useEffect(() => {
     addRecentTool("word-counter");
   }, []);
@@ -40,8 +43,8 @@ export default function WordCounterPage() {
   return (
     <ToolLayout
       currentSlug="word-counter"
-      title="Word Counter"
-      description="Count words, characters, lines, paragraphs, and estimated reading time."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <textarea

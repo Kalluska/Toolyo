@@ -8,6 +8,9 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function SlugGeneratorPage() {
+  const title = "Slug Generator";
+  const description = "Convert text into a clean URL slug.";
+
   useEffect(() => {
     addRecentTool("slug-generator");
   }, []);
@@ -35,8 +38,8 @@ export default function SlugGeneratorPage() {
   return (
     <ToolLayout
       currentSlug="slug-generator"
-      title="Slug Generator"
-      description="Convert text into a clean URL slug."
+      title={title}
+      description={description}
     >
       <div className="space-y-6">
         <textarea
