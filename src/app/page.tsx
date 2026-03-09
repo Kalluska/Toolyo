@@ -83,12 +83,12 @@ export default function HomePage() {
               Free Online Utility Platform
             </div>
             <h2 className="mt-3 text-5xl font-bold leading-tight">
-              Simple tools people actually search for
+              Free text, SEO, and developer tools in one place
             </h2>
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              Toolyo is a growing collection of text, SEO, and developer utilities built
-              for speed, simplicity, and real search demand. Each tool solves one specific
-              task quickly in the browser without unnecessary complexity.
+              Toolyo is a growing collection of browser-based tools for text cleanup,
+              counting, formatting, SEO tasks, and developer workflows. Each tool is
+              built to solve one problem quickly, clearly, and without unnecessary complexity.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -109,7 +109,7 @@ export default function HomePage() {
 
           <section className="mt-10">
             <div className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-400">
-              Most used tools
+              Featured tools
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {featuredTools.map((tool) => (
@@ -123,6 +123,20 @@ export default function HomePage() {
                   <p className="mt-2 text-sm text-zinc-600">{tool.description}</p>
                 </Link>
               ))}
+            </div>
+          </section>
+
+          <section className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
+            <h3 className="text-2xl font-bold">Why Toolyo exists</h3>
+            <div className="mt-3 max-w-4xl space-y-3 text-zinc-700">
+              <p>
+                Toolyo is built around a simple idea: small utility tools should be fast,
+                easy to use, and available instantly in the browser.
+              </p>
+              <p>
+                Instead of downloading apps or searching through bloated websites, you can
+                open one focused tool, solve one problem, and move on.
+              </p>
             </div>
           </section>
 

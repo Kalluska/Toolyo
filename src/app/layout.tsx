@@ -2,37 +2,41 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toolyo.com"),
+  metadataBase: new URL("https://toolyo-kappa.vercel.app"),
   title: {
-    default: "Toolyo",
+    default: "Toolyo – Free Text, SEO & Developer Tools",
     template: "%s | Toolyo",
   },
   description:
-    "Simple text and developer tools built for speed, utility, and search demand.",
+    "Toolyo is a free collection of text, SEO, and developer tools built for speed, simplicity, and real search demand.",
   applicationName: "Toolyo",
   keywords: [
     "text tools",
+    "seo tools",
     "developer tools",
     "word counter",
     "character counter",
     "json formatter",
-    "remove line breaks",
-    "base64 encode decode",
-    "url encode decode",
+    "slug generator",
+    "password generator",
+    "free online tools",
   ],
   openGraph: {
-    title: "Toolyo",
+    title: "Toolyo – Free Text, SEO & Developer Tools",
     description:
-      "Simple text and developer tools built for speed, utility, and search demand.",
-    url: "https://toolyo.com",
+      "Free browser-based tools for text, SEO, and developer workflows.",
+    url: "https://toolyo-kappa.vercel.app",
     siteName: "Toolyo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toolyo",
+    title: "Toolyo – Free Text, SEO & Developer Tools",
     description:
-      "Simple text and developer tools built for speed, utility, and search demand.",
+      "Free browser-based tools for text, SEO, and developer workflows.",
+  },
+  alternates: {
+    canonical: "https://toolyo-kappa.vercel.app",
   },
 };
 
