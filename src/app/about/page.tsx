@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
+
+export const metadata: Metadata = {
+  title: "About Toolyo",
+  description:
+    "Learn what Toolyo is, who it is for, and why it exists as a browser-based collection of text, SEO, and developer tools.",
+  alternates: {
+    canonical: "https://toolyo-kappa.vercel.app/about",
+  },
+  openGraph: {
+    title: "About Toolyo",
+    description:
+      "Learn what Toolyo is, who it is for, and why it exists as a browser-based collection of text, SEO, and developer tools.",
+    url: "https://toolyo-kappa.vercel.app/about",
+    siteName: "Toolyo",
+    type: "website",
+  },
+};
 
 export default function AboutPage() {
   return (

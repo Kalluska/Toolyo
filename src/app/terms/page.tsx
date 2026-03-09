@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description:
+    "Read the Toolyo terms of use for browser-based text, SEO, and developer tools, including limitations and general use conditions.",
+  alternates: {
+    canonical: "https://toolyo-kappa.vercel.app/terms",
+  },
+  openGraph: {
+    title: "Terms of Use",
+    description:
+      "Read the Toolyo terms of use for browser-based text, SEO, and developer tools, including limitations and general use conditions.",
+    url: "https://toolyo-kappa.vercel.app/terms",
+    siteName: "Toolyo",
+    type: "website",
+  },
+};
 
 export default function TermsPage() {
   return (

@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the Toolyo privacy policy and learn how browser-based tools, contact forms, and third-party services may handle limited data.",
+  alternates: {
+    canonical: "https://toolyo-kappa.vercel.app/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Read the Toolyo privacy policy and learn how browser-based tools, contact forms, and third-party services may handle limited data.",
+    url: "https://toolyo-kappa.vercel.app/privacy",
+    siteName: "Toolyo",
+    type: "website",
+  },
+};
 
 export default function PrivacyPage() {
   return (
