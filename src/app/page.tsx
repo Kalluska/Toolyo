@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { tools } from "@/data/tools";
 import SiteSidebar from "@/components/site-sidebar";
 import SiteFooter from "@/components/site-footer";
+import HeroSearch from "@/components/hero-search";
 
 const categoryIntro: Record<string, { title: string; description: string }> = {
   Text: {
@@ -124,7 +125,7 @@ export default function HomePage() {
               built to solve one problem quickly, clearly, and without unnecessary complexity.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 onClick={() => setSidebarOpen(true)}
                 className="rounded-2xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
@@ -137,6 +138,7 @@ export default function HomePage() {
               >
                 Try Word Counter
               </Link>
+              <HeroSearch />
             </div>
           </div>
 
@@ -174,20 +176,6 @@ export default function HomePage() {
                   <p className="mt-2 text-sm text-zinc-600">{category.description}</p>
                 </Link>
               ))}
-            </div>
-          </section>
-
-          <section className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
-            <h3 className="text-2xl font-bold">Why Toolyo exists</h3>
-            <div className="mt-3 max-w-4xl space-y-3 text-zinc-700">
-              <p>
-                Toolyo is built around a simple idea: small utility tools should be fast,
-                easy to use, and available instantly in the browser.
-              </p>
-              <p>
-                Instead of downloading apps or searching through bloated websites, you can
-                open one focused tool, solve one problem, and move on.
-              </p>
             </div>
           </section>
 
