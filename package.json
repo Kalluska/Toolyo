@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:tool": "node scripts/generate-tool.js"
+    "generate:tool": "node scripts/generate-tool.js",
+    "generate:batch": "node scripts/bulk-generate-tools.js"
   },
   "dependencies": {
     "next": "16.1.6",

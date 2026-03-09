@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "text-to-unicode",
+    "name": "Text to Unicode",
+    "category": "Developer",
+    "description": "Convert text to Unicode values instantly."
+  },
+  {
+    "slug": "unicode-to-text",
+    "name": "Unicode to Text",
+    "category": "Developer",
+    "description": "Convert Unicode values to text instantly."
+  },
+  {
+    "slug": "camelcase-converter",
+    "name": "CamelCase Converter",
+    "category": "Text",
+    "description": "Convert text to camelCase instantly."
+  },
+  {
+    "slug": "snakecase-converter",
+    "name": "Snake Case Converter",
+    "category": "Text",
+    "description": "Convert text to snake_case instantly."
+  },
+  {
+    "slug": "kebabcase-converter",
+    "name": "Kebab Case Converter",
+    "category": "Text",
+    "description": "Convert text to kebab-case instantly."
+  },
+  {
+    "slug": "sentence-case-converter",
+    "name": "Sentence Case Converter",
+    "category": "Text",
+    "description": "Convert text to sentence case instantly."
+  },
+  {
+    "slug": "alternating-case-converter",
+    "name": "Alternating Case Converter",
+    "category": "Text",
+    "description": "Convert text to alternating case instantly."
+  },
+  {
+    "slug": "remove-accents",
+    "name": "Remove Accents",
+    "category": "Text",
+    "description": "Remove accents and diacritics from text instantly."
+  },
+  {
+    "slug": "text-sort-descending",
+    "name": "Text Sort Descending",
+    "category": "Text",
+    "description": "Sort text lines in descending order instantly."
+  },
+  {
+    "slug": "word-frequency-counter",
+    "name": "Word Frequency Counter",
+    "category": "Text",
+    "description": "Count word frequency in text instantly."
+  },
+  {
+    "slug": "keyword-extractor",
+    "name": "Keyword Extractor",
+    "category": "SEO",
+    "description": "Extract keywords from text instantly."
+  },
+  {
+    "slug": "meta-title-length-checker",
+    "name": "Meta Title Length Checker",
+    "category": "SEO",
+    "description": "Check meta title length instantly."
+  },
+  {
+    "slug": "robots-txt-generator",
+    "name": "Robots.txt Generator",
+    "category": "SEO",
+    "description": "Generate a robots.txt file instantly."
+  },
+  {
+    "slug": "canonical-tag-generator",
+    "name": "Canonical Tag Generator",
+    "category": "SEO",
+    "description": "Generate canonical tags instantly."
+  },
+  {
+    "slug": "utm-builder",
+    "name": "UTM Builder",
+    "category": "SEO",
+    "description": "Build UTM links instantly."
+  },
+  {
+    "slug": "utm-parser",
+    "name": "UTM Parser",
+    "category": "SEO",
+    "description": "Parse UTM parameters instantly."
+  },
+  {
+    "slug": "redirect-checker",
+    "name": "Redirect Checker",
+    "category": "Developer",
+    "description": "Check redirect URLs instantly."
+  },
+  {
+    "slug": "http-status-checker",
+    "name": "HTTP Status Checker",
+    "category": "Developer",
+    "description": "Check HTTP status codes instantly."
+  },
+  {
+    "slug": "mime-type-checker",
+    "name": "MIME Type Checker",
+    "category": "Developer",
+    "description": "Check MIME types instantly."
+  },
+  {
+    "slug": "html-entity-encoder",
+    "name": "HTML Entity Encoder",
+    "category": "Developer",
+    "description": "Encode HTML entities instantly."
+  },
+  {
+    "slug": "html-entity-decoder",
+    "name": "HTML Entity Decoder",
+    "category": "Developer",
+    "description": "Decode HTML entities instantly."
+  },
+  {
+    "slug": "jwt-generator",
+    "name": "JWT Generator",
+    "category": "Developer",
+    "description": "Generate JWT tokens instantly."
+  },
+  {
+    "slug": "jwt-validator",
+    "name": "JWT Validator",
+    "category": "Developer",
+    "description": "Validate JWT tokens instantly."
+  },
+  {
+    "slug": "uuid-validator",
+    "name": "UUID Validator",
+    "category": "Developer",
+    "description": "Validate UUID strings instantly."
+  },
+  {
+    "slug": "cron-generator",
+    "name": "Cron Generator",
+    "category": "Developer",
+    "description": "Generate cron expressions instantly."
+  },
+  {
+    "slug": "cron-parser",
+    "name": "Cron Parser",
+    "category": "Developer",
+    "description": "Parse cron expressions instantly."
+  },
+  {
+    "slug": "markdown-preview",
+    "name": "Markdown Preview",
+    "category": "Developer",
+    "description": "Preview Markdown instantly."
+  },
+  {
+    "slug": "json-minifier",
+    "name": "JSON Minifier",
+    "category": "Developer",
+    "description": "Minify JSON instantly."
+  },
+  {
+    "slug": "yaml-validator",
+    "name": "YAML Validator",
+    "category": "Developer",
+    "description": "Validate YAML instantly."
+  },
+  {
+    "slug": "css-validator",
+    "name": "CSS Validator",
+    "category": "Developer",
+    "description": "Validate CSS instantly."
+  },
+  {
+    "slug": "js-validator",
+    "name": "JavaScript Validator",
+    "category": "Developer",
+    "description": "Validate JavaScript syntax instantly."
+  },
+  {
+    "slug": "fake-email-generator",
+    "name": "Fake Email Generator",
+    "category": "Developer",
+    "description": "Generate fake email examples instantly."
+  },
+  {
+    "slug": "random-string-generator",
+    "name": "Random String Generator",
+    "category": "Developer",
+    "description": "Generate random strings instantly."
+  },
+  {
+    "slug": "username-generator",
+    "name": "Username Generator",
+    "category": "Text",
+    "description": "Generate username ideas instantly."
+  },
+  {
+    "slug": "random-color-generator",
+    "name": "Random Color Generator",
+    "category": "Developer",
+    "description": "Generate random colors instantly."
+  },
+  {
+    "slug": "random-emoji-generator",
+    "name": "Random Emoji Generator",
+    "category": "Text",
+    "description": "Generate random emojis instantly."
+  },
+  {
+    "slug": "ip-validator",
+    "name": "IP Validator",
+    "category": "Developer",
+    "description": "Validate IP addresses instantly."
+  },
+  {
+    "slug": "hostname-to-ip",
+    "name": "Hostname to IP",
+    "category": "Developer",
+    "description": "Convert hostnames to IP format instantly."
+  },
+  {
+    "slug": "ip-to-hostname",
+    "name": "IP to Hostname",
+    "category": "Developer",
+    "description": "Convert IP format to hostname text instantly."
+  },
+  {
+    "slug": "domain-validator",
+    "name": "Domain Validator",
+    "category": "Developer",
+    "description": "Validate domain names instantly."
+  },
+  {
+    "slug": "domain-parser",
+    "name": "Domain Parser",
+    "category": "Developer",
+    "description": "Parse domain names instantly."
+  },
+  {
+    "slug": "lorem-ipsum-paragraphs",
+    "name": "Lorem Ipsum Paragraphs",
+    "category": "Text",
+    "description": "Generate lorem ipsum paragraphs instantly."
+  },
+  {
+    "slug": "lorem-ipsum-words",
+    "name": "Lorem Ipsum Words",
+    "category": "Text",
+    "description": "Generate lorem ipsum words instantly."
+  },
+  {
+    "slug": "csv-formatter",
+    "name": "CSV Formatter",
+    "category": "Developer",
+    "description": "Format CSV content instantly."
+  },
+  {
+    "slug": "csv-validator",
+    "name": "CSV Validator",
+    "category": "Developer",
+    "description": "Validate CSV content instantly."
+  },
+  {
+    "slug": "text-to-html",
+    "name": "Text to HTML",
+    "category": "Developer",
+    "description": "Convert plain text to basic HTML instantly."
+  },
+  {
+    "slug": "html-to-text",
+    "name": "HTML to Text",
+    "category": "Developer",
+    "description": "Convert HTML to plain text instantly."
+  },
+  {
+    "slug": "line-break-converter",
+    "name": "Line Break Converter",
+    "category": "Text",
+    "description": "Convert line break styles instantly."
+  },
+  {
+    "slug": "whitespace-visualizer",
+    "name": "Whitespace Visualizer",
+    "category": "Text",
+    "description": "Visualize whitespace characters instantly."
+  },
+  {
+    "slug": "text-column-splitter",
+    "name": "Text Column Splitter",
+    "category": "Text",
+    "description": "Split text into columns instantly."
+  }
+]
