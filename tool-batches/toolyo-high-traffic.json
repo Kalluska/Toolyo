@@ -1,0 +1,54 @@
+[
+  { "slug": "sha256-generator", "name": "SHA256 Generator", "category": "Developer", "description": "Generate SHA256 hashes instantly." },
+  { "slug": "md5-generator", "name": "MD5 Generator", "category": "Developer", "description": "Generate MD5 hashes instantly." },
+  { "slug": "sha1-generator", "name": "SHA1 Generator", "category": "Developer", "description": "Generate SHA1 hashes instantly." },
+  { "slug": "bcrypt-generator", "name": "BCrypt Generator", "category": "Developer", "description": "Generate bcrypt hashes instantly." },
+  { "slug": "hash-compare", "name": "Hash Compare", "category": "Developer", "description": "Compare hash values instantly." },
+
+  { "slug": "json-diff", "name": "JSON Diff", "category": "Developer", "description": "Compare two JSON objects instantly." },
+  { "slug": "xml-diff", "name": "XML Diff", "category": "Developer", "description": "Compare two XML documents instantly." },
+  { "slug": "csv-diff", "name": "CSV Diff", "category": "Developer", "description": "Compare two CSV datasets instantly." },
+
+  { "slug": "yaml-to-xml", "name": "YAML to XML", "category": "Developer", "description": "Convert YAML to XML instantly." },
+  { "slug": "xml-to-yaml", "name": "XML to YAML", "category": "Developer", "description": "Convert XML to YAML instantly." },
+  { "slug": "json-to-base64", "name": "JSON to Base64", "category": "Developer", "description": "Convert JSON to Base64 instantly." },
+  { "slug": "base64-to-json", "name": "Base64 to JSON", "category": "Developer", "description": "Convert Base64 to JSON instantly." },
+
+  { "slug": "markdown-to-pdf-text", "name": "Markdown to PDF Text", "category": "Developer", "description": "Convert Markdown to printable text output instantly." },
+  { "slug": "html-to-pdf-text", "name": "HTML to PDF Text", "category": "Developer", "description": "Convert HTML to printable text output instantly." },
+
+  { "slug": "jwt-header-decoder", "name": "JWT Header Decoder", "category": "Developer", "description": "Decode JWT headers instantly." },
+  { "slug": "jwt-payload-decoder", "name": "JWT Payload Decoder", "category": "Developer", "description": "Decode JWT payloads instantly." },
+
+  { "slug": "unix-time-to-date", "name": "Unix Time to Date", "category": "Developer", "description": "Convert Unix time to readable date instantly." },
+  { "slug": "date-to-unix-time", "name": "Date to Unix Time", "category": "Developer", "description": "Convert dates to Unix time instantly." },
+
+  { "slug": "html-escape", "name": "HTML Escape", "category": "Developer", "description": "Escape HTML characters instantly." },
+  { "slug": "html-unescape", "name": "HTML Unescape", "category": "Developer", "description": "Unescape HTML characters instantly." },
+  { "slug": "json-escape", "name": "JSON Escape", "category": "Developer", "description": "Escape JSON strings instantly." },
+  { "slug": "json-unescape", "name": "JSON Unescape", "category": "Developer", "description": "Unescape JSON strings instantly." },
+
+  { "slug": "regex-replacer", "name": "Regex Replacer", "category": "Developer", "description": "Replace text with regex patterns instantly." },
+  { "slug": "regex-extractor", "name": "Regex Extractor", "category": "Developer", "description": "Extract matches with regex instantly." },
+
+  { "slug": "meta-tag-generator", "name": "Meta Tag Generator", "category": "SEO", "description": "Generate meta tags instantly." },
+  { "slug": "open-graph-generator", "name": "Open Graph Generator", "category": "SEO", "description": "Generate Open Graph tags instantly." },
+  { "slug": "twitter-card-generator", "name": "Twitter Card Generator", "category": "SEO", "description": "Generate Twitter Card tags instantly." },
+  { "slug": "hreflang-generator", "name": "Hreflang Generator", "category": "SEO", "description": "Generate hreflang tags instantly." },
+  { "slug": "schema-markup-generator", "name": "Schema Markup Generator", "category": "SEO", "description": "Generate schema markup instantly." },
+
+  { "slug": "title-case-checker", "name": "Title Case Checker", "category": "Text", "description": "Check title capitalization instantly." },
+  { "slug": "passive-voice-checker", "name": "Passive Voice Checker", "category": "Text", "description": "Check passive voice usage instantly." },
+  { "slug": "reading-grade-checker", "name": "Reading Grade Checker", "category": "Text", "description": "Check reading grade instantly." },
+  { "slug": "estimated-reading-time", "name": "Estimated Reading Time", "category": "Text", "description": "Estimate reading time instantly." },
+  { "slug": "estimated-speaking-time", "name": "Estimated Speaking Time", "category": "Text", "description": "Estimate speaking time instantly." },
+
+  { "slug": "random-name-generator", "name": "Random Name Generator", "category": "Text", "description": "Generate random names instantly." },
+  { "slug": "random-password-list", "name": "Random Password List", "category": "Developer", "description": "Generate a list of random passwords instantly." },
+  { "slug": "random-uuid-list", "name": "Random UUID List", "category": "Developer", "description": "Generate a list of UUIDs instantly." },
+  { "slug": "random-number-list", "name": "Random Number List", "category": "Developer", "description": "Generate a list of random numbers instantly." },
+
+  { "slug": "keyword-clustering-tool", "name": "Keyword Clustering Tool", "category": "SEO", "description": "Cluster keywords instantly." },
+  { "slug": "keyword-grouping-tool", "name": "Keyword Grouping Tool", "category": "SEO", "description": "Group keywords instantly." },
+  { "slug": "keyword-difficulty-notes", "name": "Keyword Difficulty Notes", "category": "SEO", "description": "Organize keyword difficulty notes instantly." }
+]

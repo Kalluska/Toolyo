@@ -134,4 +134,496 @@ export const toolSeoContentMap: Record<string, {
     ]
   }
 
+  "sha256-generator": {
+    about: "SHA256 Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "SHA256 Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "md5-generator": {
+    about: "MD5 Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "MD5 Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "sha1-generator": {
+    about: "SHA1 Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "SHA1 Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "bcrypt-generator": {
+    about: "BCrypt Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "BCrypt Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "hash-compare": {
+    about: "Hash Compare helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Hash Compare helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "json-diff": {
+    about: "JSON Diff helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JSON Diff helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "xml-diff": {
+    about: "XML Diff helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "XML Diff helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "csv-diff": {
+    about: "CSV Diff helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "CSV Diff helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "yaml-to-xml": {
+    about: "YAML to XML helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "YAML to XML helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "xml-to-yaml": {
+    about: "XML to YAML helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "XML to YAML helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "json-to-base64": {
+    about: "JSON to Base64 helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JSON to Base64 helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "base64-to-json": {
+    about: "Base64 to JSON helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Base64 to JSON helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "markdown-to-pdf-text": {
+    about: "Markdown to PDF Text helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Markdown to PDF Text helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "html-to-pdf-text": {
+    about: "HTML to PDF Text helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "HTML to PDF Text helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "jwt-header-decoder": {
+    about: "JWT Header Decoder helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JWT Header Decoder helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "jwt-payload-decoder": {
+    about: "JWT Payload Decoder helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JWT Payload Decoder helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "unix-time-to-date": {
+    about: "Unix Time to Date helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Unix Time to Date helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "date-to-unix-time": {
+    about: "Date to Unix Time helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Date to Unix Time helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "html-escape": {
+    about: "HTML Escape helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "HTML Escape helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "html-unescape": {
+    about: "HTML Unescape helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "HTML Unescape helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "json-escape": {
+    about: "JSON Escape helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JSON Escape helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "json-unescape": {
+    about: "JSON Unescape helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "JSON Unescape helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "regex-replacer": {
+    about: "Regex Replacer helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Regex Replacer helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "regex-extractor": {
+    about: "Regex Extractor helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Regex Extractor helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "meta-tag-generator": {
+    about: "Meta Tag Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Meta Tag Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "open-graph-generator": {
+    about: "Open Graph Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Open Graph Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "twitter-card-generator": {
+    about: "Twitter Card Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Twitter Card Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "hreflang-generator": {
+    about: "Hreflang Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Hreflang Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "schema-markup-generator": {
+    about: "Schema Markup Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Schema Markup Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "title-case-checker": {
+    about: "Title Case Checker helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Title Case Checker helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "passive-voice-checker": {
+    about: "Passive Voice Checker helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Passive Voice Checker helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "reading-grade-checker": {
+    about: "Reading Grade Checker helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Reading Grade Checker helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "estimated-reading-time": {
+    about: "Estimated Reading Time helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Estimated Reading Time helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "estimated-speaking-time": {
+    about: "Estimated Speaking Time helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Estimated Speaking Time helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "random-name-generator": {
+    about: "Random Name Generator helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Random Name Generator helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "random-password-list": {
+    about: "Random Password List helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Random Password List helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "random-uuid-list": {
+    about: "Random UUID List helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Random UUID List helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "random-number-list": {
+    about: "Random Number List helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Random Number List helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "keyword-clustering-tool": {
+    about: "Keyword Clustering Tool helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Keyword Clustering Tool helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "keyword-grouping-tool": {
+    about: "Keyword Grouping Tool helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Keyword Grouping Tool helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
+  "keyword-difficulty-notes": {
+    about: "Keyword Difficulty Notes helps you solve this task quickly in your browser without extra software.",
+    steps: [
+      "Paste or type your content into the input field.",
+      "Review the generated output instantly.",
+      "Copy the result and use it where needed."
+    ],
+    faq: [
+      { q: "What does this tool do?", a: "Keyword Difficulty Notes helps you complete this task directly in your browser." },
+      { q: "Is this tool free?", a: "Yes. This tool is free to use online." }
+    ]
+  },
 };
