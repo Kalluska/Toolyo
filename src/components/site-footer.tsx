@@ -17,7 +17,7 @@ export default function SiteFooter() {
       />
 
       <footer className="mt-12 border-t border-zinc-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-4">
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               Toolyo
@@ -57,6 +57,29 @@ export default function SiteFooter() {
 
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+              Categories
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <Link href="/text-tools" className="block text-zinc-600 hover:text-zinc-900">
+                Text Tools
+              </Link>
+              <Link href="/developer-tools" className="block text-zinc-600 hover:text-zinc-900">
+                Developer Tools
+              </Link>
+              <Link href="/seo-tools" className="block text-zinc-600 hover:text-zinc-900">
+                SEO Tools
+              </Link>
+              <Link href="/converters" className="block text-zinc-600 hover:text-zinc-900">
+                Converters
+              </Link>
+              <Link href="/generators" className="block text-zinc-600 hover:text-zinc-900">
+                Generators
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               Legal
             </div>
             <div className="mt-3 space-y-2 text-sm">
@@ -77,7 +100,7 @@ export default function SiteFooter() {
         <div className="border-t border-zinc-200">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
             <div>© 2026 Toolyo. All rights reserved.</div>
-            <div>Built for text, SEO, and developer workflows.</div>
+            <div>Built for text, SEO, developer workflows, and converters.</div>
           </div>
         </div>
       </footer>
