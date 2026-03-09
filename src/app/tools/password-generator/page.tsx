@@ -155,7 +155,33 @@ export default function PasswordGeneratorPage() {
         </div>
       </div>
 
-      <ToolSeoContent title="Password Generator" description="Generate secure passwords instantly." />
+      <ToolSeoContent
+        title="Password Generator"
+        description="Generate secure passwords instantly."
+        about={[
+          "Password Generator helps you create stronger passwords quickly in the browser without relying on easy-to-guess patterns.",
+          "This tool lets you choose length and character types such as uppercase letters, lowercase letters, numbers, and symbols. It is useful for creating better passwords for personal and professional accounts.",
+        ]}
+        steps={[
+          "Choose the password length you want.",
+          "Select which character types to include.",
+          "Generate a password and copy it to use where needed.",
+        ]}
+        faq={[
+          {
+            question: "What makes a password strong?",
+            answer: "A strong password is usually longer and includes a mix of uppercase letters, lowercase letters, numbers, and symbols.",
+          },
+          {
+            question: "Should I use symbols in passwords?",
+            answer: "In most cases yes, because symbols increase complexity and make passwords harder to guess.",
+          },
+          {
+            question: "Can I generate multiple passwords?",
+            answer: "Yes. You can generate again as many times as you want until you get a password you like.",
+          },
+        ]}
+      />
       <ToolFeaturedTools currentSlug="password-generator" />
       <RelatedTools currentSlug="password-generator" />
     </ToolLayout>

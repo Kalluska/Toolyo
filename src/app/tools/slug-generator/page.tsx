@@ -1,10 +1,11 @@
 "use client";
+
 import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
-import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
+import RelatedTools from "@/components/related-tools";
 
 export default function SlugGeneratorPage() {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function SlugGeneratorPage() {
   }, []);
 
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const slug = useMemo(() => {
     return text
@@ -22,6 +24,13 @@ export default function SlugGeneratorPage() {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
   }, [text]);
+
+  const copySlug = async () => {
+    if (!slug) return;
+    await navigator.clipboard.writeText(slug);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   return (
     <ToolLayout
@@ -45,29 +54,35 @@ export default function SlugGeneratorPage() {
             className="min-h-[120px] w-full rounded-2xl border border-zinc-200 p-4"
           />
         </div>
+
+        <button
+          onClick={copySlug}
+          className="rounded-xl border border-zinc-200 px-4 py-2"
+        >
+          {copied ? "Copied" : "Copy slug"}
+        </button>
       </div>
-    
-      
+
       <ToolSeoContent
         title="Slug Generator"
         description="Convert text into a clean URL slug."
         about={[
-          "Slug Generator is useful for blog posts, landing pages, product pages, and any URL that needs to be short, readable, and SEO-friendly.",
-          "This tool converts titles and phrases into clean URL slugs by removing extra characters and replacing spaces with hyphens. It helps keep links organized and easier to understand.",
+          "Slug Generator is useful for blog posts, landing pages, documentation, and any URL that should stay short, readable, and SEO-friendly.",
+          "This tool converts titles and phrases into clean slugs by removing extra characters and replacing spaces with hyphens. It helps keep URLs organized and easier to understand.",
         ]}
         steps={[
-          "Paste or type a title, headline, or phrase into the input box.",
-          "The tool generates a clean slug automatically.",
+          "Paste or type a title, phrase, or heading into the input field.",
+          "Review the generated slug instantly in the output box.",
           "Copy the slug and use it in your URL or content system.",
         ]}
         faq={[
           {
-            question: "What is a URL slug?",
-            answer: "A slug is the readable part of a URL, usually based on the page title or topic.",
+            question: "What is a slug?",
+            answer: "A slug is the readable part of a URL, often based on the title of a page or post.",
           },
           {
             question: "Why are slugs important for SEO?",
-            answer: "Clean slugs make URLs easier to read and understand for both users and search engines.",
+            answer: "Clean slugs make URLs easier to read and can help improve clarity for users and search engines.",
           },
           {
             question: "Does this tool remove special characters?",
@@ -77,7 +92,6 @@ export default function SlugGeneratorPage() {
       />
       <ToolFeaturedTools currentSlug="slug-generator" />
       <RelatedTools currentSlug="slug-generator" />
-
     </ToolLayout>
   );
 }

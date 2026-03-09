@@ -1,10 +1,11 @@
 "use client";
+
 import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
-import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
+import RelatedTools from "@/components/related-tools";
 
 export default function CharacterCounterPage() {
   useEffect(() => {
@@ -19,13 +20,7 @@ export default function CharacterCounterPage() {
     const charactersNoSpaces = normalized.replace(/\s/g, "").length;
     const words = normalized.trim() ? normalized.trim().split(/\s+/).length : 0;
     const lines = normalized ? normalized.split("\n").length : 0;
-
-    return {
-      characters,
-      charactersNoSpaces,
-      words,
-      lines,
-    };
+    return { characters, charactersNoSpaces, words, lines };
   }, [text]);
 
   return (
@@ -39,55 +34,58 @@ export default function CharacterCounterPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Paste or type your text here..."
-          className="min-h-[220px] w-full rounded-2xl border border-zinc-200 p-4 outline-none focus:border-zinc-400"
+          className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4 outline-none focus:border-zinc-400"
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {[
-            ["Characters", stats.characters],
-            ["No spaces", stats.charactersNoSpaces],
-            ["Words", stats.words],
-            ["Lines", stats.lines],
-          ].map(([label, value]) => (
-            <div key={String(label)} className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">{label}</div>
-              <div className="mt-2 text-2xl font-bold">{value}</div>
-            </div>
-          ))}
+          <div className="rounded-2xl border border-zinc-200 p-4">
+            <div className="text-sm text-zinc-500">Characters</div>
+            <div className="mt-2 text-3xl font-bold">{stats.characters}</div>
+          </div>
+          <div className="rounded-2xl border border-zinc-200 p-4">
+            <div className="text-sm text-zinc-500">No spaces</div>
+            <div className="mt-2 text-3xl font-bold">{stats.charactersNoSpaces}</div>
+          </div>
+          <div className="rounded-2xl border border-zinc-200 p-4">
+            <div className="text-sm text-zinc-500">Words</div>
+            <div className="mt-2 text-3xl font-bold">{stats.words}</div>
+          </div>
+          <div className="rounded-2xl border border-zinc-200 p-4">
+            <div className="text-sm text-zinc-500">Lines</div>
+            <div className="mt-2 text-3xl font-bold">{stats.lines}</div>
+          </div>
         </div>
       </div>
-    
-      
+
       <ToolSeoContent
         title="Character Counter"
         description="Count characters, characters without spaces, words, and lines."
         about={[
-          "Character Counter is useful when you need precise text length, especially for SEO titles, social media captions, ad copy, and short-form writing.",
-          "This tool shows total characters, characters without spaces, words, and lines. It is helpful whenever your content must fit into strict text limits.",
+          "Character Counter is useful when you need exact text length for SEO titles, descriptions, ads, captions, forms, or any content with character limits.",
+          "This tool shows total characters, characters without spaces, words, and lines, making it easier to adjust text before publishing or submitting it.",
         ]}
         steps={[
           "Paste or type your text into the input box.",
-          "Check total character count and the no-spaces count.",
-          "Trim or rewrite the text until it fits your target.",
+          "Review the character totals and no-spaces count.",
+          "Trim or expand the text until it fits your target.",
         ]}
         faq={[
           {
             question: "Why count characters without spaces?",
-            answer: "Some platforms and systems treat spaces differently, so the no-spaces count gives you a stricter text measurement.",
+            answer: "Some platforms and systems treat spaces differently, so the no-spaces number gives you a stricter text measurement.",
           },
           {
-            question: "Is this useful for SEO?",
-            answer: "Yes. Character count is important for titles, meta descriptions, and snippet optimization.",
+            question: "Is this useful for SEO work?",
+            answer: "Yes. Character count matters for titles, descriptions, and snippet optimization.",
           },
           {
-            question: "Does the tool update live?",
-            answer: "Yes. Counts update instantly as you type or edit the text.",
+            question: "Can I use this for social media text limits?",
+            answer: "Yes. It is useful for captions, bios, ad copy, and short-form content.",
           },
         ]}
       />
       <ToolFeaturedTools currentSlug="character-counter" />
       <RelatedTools currentSlug="character-counter" />
-
     </ToolLayout>
   );
 }
