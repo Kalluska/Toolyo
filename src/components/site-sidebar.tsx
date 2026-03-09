@@ -121,8 +121,13 @@ export default function SiteSidebar({
 
           {isSearching && (
             <div className="mb-6">
-              <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-400">
-                Search results
+              <div className="mb-2 flex items-center justify-between px-1">
+                <div className="text-xs font-semibold uppercase tracking-wide text-zinc-400">
+                  Search results
+                </div>
+                <div className="text-xs text-zinc-400">
+                  {filteredTools.length} result{filteredTools.length === 1 ? "" : "s"}
+                </div>
               </div>
 
               {filteredTools.length > 0 ? (
