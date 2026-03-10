@@ -5,6 +5,7 @@ import Link from "next/link";
 import SiteSidebar from "@/components/site-sidebar";
 import SiteFooter from "@/components/site-footer";
 import ToolActionBar from "@/components/tool-action-bar";
+import OutputActionBar from "@/components/output-action-bar";
 
 type ToolLayoutProps = {
   currentSlug: string;
@@ -93,6 +94,8 @@ export default function ToolLayout({
           </div>
 
           <ToolActionBar currentSlug={currentSlug} />
+
+           <OutputActionBar />
 
           {children}
         </main>
