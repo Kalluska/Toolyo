@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import SiteSidebar from "@/components/site-sidebar";
 import SiteFooter from "@/components/site-footer";
+import ToolActionBar from "@/components/tool-action-bar";
 
 type ToolLayoutProps = {
   currentSlug: string;
@@ -79,7 +80,10 @@ export default function ToolLayout({
       </header>
 
       <section className="mx-auto max-w-7xl px-6 py-8">
-        <main className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-zinc-100">
+        <main
+          id="toolyo-tool-root"
+          className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-zinc-100"
+        >
           <div className="mb-6">
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               Tool
@@ -87,6 +91,9 @@ export default function ToolLayout({
             <h2 className="mt-2 text-3xl font-bold">{title}</h2>
             <p className="mt-2 text-zinc-600">{description}</p>
           </div>
+
+          <ToolActionBar currentSlug={currentSlug} />
+
           {children}
         </main>
       </section>
