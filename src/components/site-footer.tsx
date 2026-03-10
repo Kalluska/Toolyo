@@ -37,6 +37,9 @@ export default function SiteFooter() {
               <Link href="/" className="block text-zinc-600 hover:text-zinc-900">
                 Home
               </Link>
+              <Link href="/tools" className="block text-zinc-600 hover:text-zinc-900">
+                All Tools
+              </Link>
               <Link href="/about" className="block text-zinc-600 hover:text-zinc-900">
                 About
               </Link>
