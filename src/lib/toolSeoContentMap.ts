@@ -132,7 +132,7 @@ export const toolSeoContentMap: Record<string, {
       { q: "What parts does a URL contain?", a: "Protocol, domain, path, query parameters, and fragments." },
       { q: "Why parse URLs?", a: "It helps developers inspect routing and query parameters." }
     ]
-  }
+  },
 
   "sha256-generator": {
     about: "SHA256 Generator helps you solve this task quickly in your browser without extra software.",
