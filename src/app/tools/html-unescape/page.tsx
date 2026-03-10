@@ -1,34 +1,39 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/tool-layout";
 import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
-import RelatedTools from "@/components/related-tools";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
+import RelatedTools from "@/components/related-tools";
 
-export default function HtmlUnescape(){
-const [text,setText]=useState("");
+export default function HtmlUnescapePage() {
+  const title = "HTML Unescape";
+  const description = "Unescape HTML characters instantly.";
+  const [input, setInput] = useState("");
 
-const unescaped=text
-.replace(/&lt;/g,"<")
-.replace(/&gt;/g,">")
-.replace(/&amp;/g,"&")
-.replace(/&quot;/g,'"');
+  useEffect(() => {
+    addRecentTool("html-unescape");
+  }, []);
 
-return(
-<ToolLayout currentSlug="html-unescape" title="HTML Unescape" description="Convert escaped HTML back to normal text.">
-<div className="grid gap-4 lg:grid-cols-2">
-<textarea value={text} onChange={(e)=>setText(e.target.value)} className="border p-4 rounded-xl"/>
-<textarea readOnly value={unescaped} className="border p-4 rounded-xl"/>
-</div>
+  const output = useMemo(() => {
+    return input
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&amp;/g, "&");
+  }, [input]);
 
-      <ToolSeoContent
-        title="HTML Unescape"
-        description="Convert escaped HTML back to normal text."
-      />
+  return (
+    <ToolLayout currentSlug="html-unescape" title={title} description={description}>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <textarea value={input} onChange={(e) => setInput(e.target.value)} className="min-h-[240px] rounded-2xl border border-zinc-200 p-4" />
+        <textarea readOnly value={output} className="min-h-[240px] rounded-2xl border border-zinc-200 p-4 font-mono text-sm" />
+      </div>
+      <ToolSeoContent title={title} description={description} slug="html-unescape" />
       <ToolFeaturedTools currentSlug="html-unescape" />
       <RelatedTools currentSlug="html-unescape" />
-
     </ToolLayout>
   );
 }

@@ -8,42 +8,34 @@ import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
 
 export default function OpenGraphGeneratorPage() {
+  const title = "Open Graph Generator";
+  const description = "Generate Open Graph tags instantly.";
+  const [ogTitle, setOgTitle] = useState("");
+  const [ogDescription, setOgDescription] = useState("");
+  const [ogUrl, setOgUrl] = useState("");
+  const [ogImage, setOgImage] = useState("");
+
   useEffect(() => {
     addRecentTool("open-graph-generator");
   }, []);
 
-  const title = "Open Graph Generator";
-  const description = "Generate Open Graph tags instantly.";
-  const [input, setInput] = useState("");
-  const output = useMemo(() => input, [input]);
+  const output = useMemo(() => {
+    return `<meta property="og:title" content="${ogTitle}" />
+<meta property="og:description" content="${ogDescription}" />
+<meta property="og:url" content="${ogUrl}" />
+<meta property="og:image" content="${ogImage}" />
+<meta property="og:type" content="website" />`;
+  }, [ogTitle, ogDescription, ogUrl, ogImage]);
 
   return (
-    <ToolLayout
-      currentSlug="open-graph-generator"
-      title={title}
-      description={description}
-    >
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div>
-          <div className="mb-2 text-sm font-medium">Input</div>
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Paste or type here..."
-            className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4"
-          />
-        </div>
-
-        <div>
-          <div className="mb-2 text-sm font-medium">Output</div>
-          <textarea
-            readOnly
-            value={output}
-            className="min-h-[240px] w-full rounded-2xl border border-zinc-200 p-4"
-          />
-        </div>
+    <ToolLayout currentSlug="open-graph-generator" title={title} description={description}>
+      <div className="grid gap-4">
+        <input value={ogTitle} onChange={(e) => setOgTitle(e.target.value)} placeholder="OG title" className="rounded-2xl border border-zinc-200 p-4" />
+        <textarea value={ogDescription} onChange={(e) => setOgDescription(e.target.value)} placeholder="OG description" className="min-h-[120px] rounded-2xl border border-zinc-200 p-4" />
+        <input value={ogUrl} onChange={(e) => setOgUrl(e.target.value)} placeholder="OG URL" className="rounded-2xl border border-zinc-200 p-4" />
+        <input value={ogImage} onChange={(e) => setOgImage(e.target.value)} placeholder="OG image URL" className="rounded-2xl border border-zinc-200 p-4" />
+        <textarea readOnly value={output} className="min-h-[220px] rounded-2xl border border-zinc-200 p-4 font-mono text-sm" />
       </div>
-
       <ToolSeoContent title={title} description={description} slug="open-graph-generator" />
       <ToolFeaturedTools currentSlug="open-graph-generator" />
       <RelatedTools currentSlug="open-graph-generator" />
