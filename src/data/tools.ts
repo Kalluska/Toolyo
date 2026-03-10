@@ -113,14 +113,6 @@ export const tools: Tool[] = [
     seoDescription: "Sort lines alphabetically online instantly with this free line sorter tool.",
   },
   {
-    slug: "lorem-ipsum",
-    name: "Lorem Ipsum Generator",
-    category: "Text",
-    description: "Generate dummy text paragraphs instantly.",
-    seoTitle: "Lorem Ipsum Generator",
-    seoDescription: "Generate lorem ipsum placeholder text online instantly with this free generator.",
-  },
-  {
     slug: "slug-generator",
     name: "Slug Generator",
     category: "SEO",
