@@ -14,6 +14,38 @@ type SiteSidebarProps = {
   currentSlug?: string;
 };
 
+function rankTools(query: string): Tool[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return tools;
+
+  return tools
+    .map((tool) => {
+      const name = tool.name.toLowerCase();
+      const slug = tool.slug.toLowerCase();
+      const description = tool.description.toLowerCase();
+      const category = tool.category.toLowerCase();
+
+      let score = 0;
+
+      if (name === q) score = 100;
+      else if (slug === q) score = 95;
+      else if (name.startsWith(q)) score = 90;
+      else if (slug.startsWith(q)) score = 85;
+      else if (name.includes(q)) score = 70;
+      else if (slug.includes(q)) score = 60;
+      else if (category.includes(q)) score = 40;
+      else if (description.includes(q)) score = 30;
+
+      return { tool, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.tool.name.localeCompare(b.tool.name);
+    })
+    .map((item) => item.tool);
+}
+
 export default function SiteSidebar({
   isOpen,
   onClose,
@@ -40,17 +72,7 @@ export default function SiteSidebar({
   const query = search.trim().toLowerCase();
   const isSearching = query.length > 0;
 
-  const filteredTools = useMemo(() => {
-    if (!query) return tools;
-
-    return tools.filter((tool) => {
-      return (
-        tool.name.toLowerCase().includes(query) ||
-        tool.category.toLowerCase().includes(query) ||
-        tool.description.toLowerCase().includes(query)
-      );
-    });
-  }, [query]);
+  const filteredTools = useMemo(() => rankTools(query), [query]);
 
   const groupedTools = useMemo(() => {
     return tools.reduce<Record<string, Tool[]>>((acc, tool) => {

@@ -4,26 +4,46 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { tools } from "@/data/tools";
 
+type RankedTool = (typeof tools)[number] & { score: number };
+
+function rankTools(query: string): RankedTool[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+
+  return tools
+    .map((tool) => {
+      const name = tool.name.toLowerCase();
+      const slug = tool.slug.toLowerCase();
+      const description = tool.description.toLowerCase();
+      const category = tool.category.toLowerCase();
+
+      let score = 0;
+
+      if (name === q) score = 100;
+      else if (slug === q) score = 95;
+      else if (name.startsWith(q)) score = 90;
+      else if (slug.startsWith(q)) score = 85;
+      else if (name.includes(q)) score = 70;
+      else if (slug.includes(q)) score = 60;
+      else if (category.includes(q)) score = 40;
+      else if (description.includes(q)) score = 30;
+
+      return { ...tool, score };
+    })
+    .filter((tool) => tool.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.name.localeCompare(b.name);
+    })
+    .slice(0, 8);
+}
+
 export default function HeroSearch() {
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [focused, setFocused] = useState(false);
 
-  const results = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    if (!query) return [];
-
-    return tools
-      .filter((tool) => {
-        return (
-          tool.name.toLowerCase().includes(query) ||
-          tool.slug.toLowerCase().includes(query) ||
-          tool.category.toLowerCase().includes(query) ||
-          tool.description.toLowerCase().includes(query)
-        );
-      })
-      .slice(0, 8);
-  }, [search]);
+  const results = useMemo(() => rankTools(search), [search]);
 
   const openTool = (slug: string) => {
     setFocused(false);
