@@ -15,6 +15,8 @@ export default function CategoryPage({
   description,
   tools,
 }: CategoryPageProps) {
+  const featured = tools.slice(0, 6);
+
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900">
       <header className="border-b border-zinc-200 bg-white">
@@ -34,6 +36,46 @@ export default function CategoryPage({
           <p className="mt-4 max-w-4xl text-lg leading-8 text-zinc-600">
             {description}
           </p>
+
+          <section className="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
+            <h3 className="text-2xl font-bold">About these {title.toLowerCase()}</h3>
+            <div className="mt-3 space-y-3 text-zinc-700">
+              <p>
+                This category page collects the main {title.toLowerCase()} available on Toolyo.
+                These tools are built for speed, simplicity, and direct browser-based use.
+              </p>
+              <p>
+                Instead of using heavy software, you can open one focused tool, solve one task,
+                and move on quickly. This makes Toolyo useful for everyday workflows and fast checks.
+              </p>
+            </div>
+          </section>
+
+          <section className="mt-8">
+            <h3 className="text-2xl font-bold">Featured in this category</h3>
+            <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {featured.map((tool) => (
+                <Link
+                  key={tool.slug}
+                  href={`/tools/${tool.slug}`}
+                  className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5 transition hover:border-zinc-400"
+                >
+                  <div className="text-sm text-zinc-500">{tool.category}</div>
+                  <div className="mt-1 text-xl font-semibold">{tool.name}</div>
+                  <p className="mt-2 text-sm text-zinc-600">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-8 rounded-2xl border border-zinc-200 p-6">
+            <h3 className="text-2xl font-bold">How to use these tools</h3>
+            <ol className="mt-4 list-decimal space-y-2 pl-5 text-zinc-700">
+              <li>Choose the tool that matches your task.</li>
+              <li>Paste or type your input into the tool page.</li>
+              <li>Copy the result and continue your workflow.</li>
+            </ol>
+          </section>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {tools.map((tool) => (

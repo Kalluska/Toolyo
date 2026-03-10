@@ -40,11 +40,14 @@ export default function SiteFooter() {
               <Link href="/about" className="block text-zinc-600 hover:text-zinc-900">
                 About
               </Link>
+              <Link href="/site-map" className="block text-zinc-600 hover:text-zinc-900">
+                HTML Sitemap
+              </Link>
               <a
                 href="/sitemap.xml"
                 className="block text-zinc-600 hover:text-zinc-900"
               >
-                Sitemap
+                XML Sitemap
               </a>
               <button
                 onClick={() => setContactOpen(true)}
@@ -100,7 +103,7 @@ export default function SiteFooter() {
         <div className="border-t border-zinc-200">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
             <div>© 2026 Toolyo. All rights reserved.</div>
-            <div>Built for text, SEO, developer workflows, and converters.</div>
+            <div>Built for text, SEO, developer workflows, converters, and generators.</div>
           </div>
         </div>
       </footer>
