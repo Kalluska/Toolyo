@@ -140,6 +140,45 @@ html.dark {
 }
 
 
+/* =========================
+   TOOLYO_THEME_SYSTEM_V2
+   ========================= */
+
+:root{
+
+--bg-main:#ffffff;
+--bg-card:#ffffff;
+--bg-soft:#f6f7fb;
+
+--text-main:#0f172a;
+--text-soft:#64748b;
+
+--border-main:#e5e7eb;
+
+--button-bg:#111827;
+--button-text:#ffffff;
+
+--input-bg:#ffffff;
+
+}
+
+.dark{
+
+--bg-main:#09090b;
+--bg-card:#111114;
+--bg-soft:#16161a;
+
+--text-main:#f8fafc;
+--text-soft:#9ca3af;
+
+--border-main:#2a2a33;
+
+--button-bg:#ffffff;
+--button-text:#000000;
+
+--input-bg:#18181b;
+
+}
 
 /* body */
 
@@ -249,64 +288,66 @@ box-shadow .35s ease;
 
 
 
-
-
-
-
-/* TOOLYO_NEUTRAL_THEME_V3_START */
+/* TOOLYO_FINAL_THEME_RESET_START */
 
 :root {
   color-scheme: light;
+
   --toolyo-bg: #f5f5f5;
   --toolyo-surface: #ffffff;
   --toolyo-surface-2: #fafafa;
   --toolyo-text: #111111;
-  --toolyo-text-soft: #525252;
-  --toolyo-text-faint: #737373;
-  --toolyo-border: #d4d4d4;
+  --toolyo-text-soft: #4b5563;
+  --toolyo-text-faint: #6b7280;
+  --toolyo-border: #d1d5db;
+  --toolyo-input: #ffffff;
+  --toolyo-button: #111111;
+  --toolyo-button-text: #ffffff;
+  --toolyo-pill: #ffffff;
 }
 
 html.dark {
   color-scheme: dark;
+
   --toolyo-bg: #0a0a0a;
   --toolyo-surface: #111111;
   --toolyo-surface-2: #171717;
   --toolyo-text: #f5f5f5;
-  --toolyo-text-soft: #d4d4d4;
-  --toolyo-text-faint: #a3a3a3;
+  --toolyo-text-soft: #d4d4d8;
+  --toolyo-text-faint: #a1a1aa;
   --toolyo-border: #3f3f46;
+  --toolyo-input: #111111;
+  --toolyo-button: #f5f5f5;
+  --toolyo-button-text: #111111;
+  --toolyo-pill: #111111;
 }
 
 html,
 body {
   background: var(--toolyo-bg) !important;
   color: var(--toolyo-text) !important;
-  transition: background-color 220ms ease, color 220ms ease;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+body {
+  min-height: 100vh;
 }
 
 html.theme-animate *,
 html.theme-animate *::before,
 html.theme-animate *::after {
   transition:
-    background-color 220ms ease,
-    color 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    fill 220ms ease,
-    stroke 220ms ease,
-    opacity 220ms ease !important;
+    background-color 260ms ease,
+    color 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    fill 260ms ease,
+    stroke 260ms ease,
+    opacity 260ms ease,
+    transform 260ms ease !important;
 }
 
-header,
-nav,
-aside,
-section,
-article,
-main,
-footer {
-  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
-}
-
+/* Base text */
 h1, h2, h3, h4, h5, h6,
 label, strong, b {
   color: var(--toolyo-text) !important;
@@ -325,108 +366,171 @@ span {
   opacity: 1;
 }
 
-/* Neutral surfaces */
-html.dark .bg-white,
-html.dark .bg-neutral-50,
-html.dark .bg-neutral-100,
-html.dark .bg-gray-50,
-html.dark .bg-gray-100,
-html.dark .bg-zinc-50,
-html.dark .bg-zinc-100 {
-  background-color: var(--toolyo-surface) !important;
+/* Surfaces */
+main, section, article, aside, nav, header, footer, div {
+  border-color: inherit;
 }
 
-html:not(.dark) .bg-black,
-html:not(.dark) .bg-neutral-900,
-html:not(.dark) .bg-neutral-950,
-html:not(.dark) .bg-zinc-900,
-html:not(.dark) .bg-zinc-950,
-html:not(.dark) .bg-gray-900,
-html:not(.dark) .bg-gray-950 {
+header,
+nav {
   background-color: var(--toolyo-surface) !important;
-}
-
-/* Neutral text */
-html.dark .text-black,
-html.dark .text-neutral-900,
-html.dark .text-neutral-800,
-html.dark .text-neutral-700,
-html.dark .text-zinc-900,
-html.dark .text-zinc-800,
-html.dark .text-zinc-700,
-html.dark .text-gray-900,
-html.dark .text-gray-800,
-html.dark .text-gray-700 {
   color: var(--toolyo-text) !important;
 }
 
-html:not(.dark) .text-white,
-html:not(.dark) .text-neutral-50,
-html:not(.dark) .text-zinc-50,
-html:not(.dark) .text-gray-50 {
-  color: var(--toolyo-text) !important;
-}
-
-html.dark .text-neutral-600,
-html.dark .text-neutral-500,
-html.dark .text-zinc-600,
-html.dark .text-zinc-500,
-html.dark .text-gray-600,
-html.dark .text-gray-500 {
-  color: var(--toolyo-text-faint) !important;
-}
-
-/* Borders */
-html.dark .border-neutral-100,
-html.dark .border-neutral-200,
-html.dark .border-neutral-300,
-html.dark .border-zinc-100,
-html.dark .border-zinc-200,
-html.dark .border-zinc-300,
-html.dark .border-gray-100,
-html.dark .border-gray-200,
-html.dark .border-gray-300 {
-  border-color: var(--toolyo-border) !important;
-}
-
-html:not(.dark) .border-neutral-700,
-html:not(.dark) .border-neutral-800,
-html:not(.dark) .border-neutral-900,
-html:not(.dark) .border-zinc-700,
-html:not(.dark) .border-zinc-800,
-html:not(.dark) .border-zinc-900,
-html:not(.dark) .border-gray-700,
-html:not(.dark) .border-gray-800,
-html:not(.dark) .border-gray-900 {
-  border-color: var(--toolyo-border) !important;
+/* Cards / containers */
+section,
+article,
+aside,
+div[class*="rounded"],
+div[class*="border"],
+div[class*="card"],
+div[class*="hero"],
+div[class*="feature"],
+div[class*="tool"],
+div[class*="slot"],
+div[class*="rail"] {
+  border-color: var(--toolyo-border);
 }
 
 /* Inputs */
 input,
 textarea,
 select {
-  background: var(--toolyo-surface) !important;
+  background: var(--toolyo-input) !important;
   color: var(--toolyo-text) !important;
   border-color: var(--toolyo-border) !important;
 }
 
-/* Buttons / pills */
+/* Buttons and pills */
 button,
 a[class*="rounded"],
 a[class*="inline-flex"] {
   border-color: var(--toolyo-border) !important;
 }
 
-/* Small icon/menu buttons */
-button[class*="w-10"],
-button[class*="w-11"],
-button[class*="w-12"],
+/* DARK MODE overrides for common light classes */
+html.dark .bg-white,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100,
+html.dark .bg-neutral-50,
+html.dark .bg-neutral-100,
+html.dark .bg-zinc-50,
+html.dark .bg-zinc-100,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  background-color: var(--toolyo-surface) !important;
+}
+
+html.dark .text-black,
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700,
+html.dark .text-neutral-900,
+html.dark .text-neutral-800,
+html.dark .text-zinc-900,
+html.dark .text-zinc-800,
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+  color: var(--toolyo-text) !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-gray-500,
+html.dark .text-neutral-600,
+html.dark .text-zinc-600,
+html.dark .text-zinc-500,
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+  color: var(--toolyo-text-faint) !important;
+}
+
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-gray-300,
+html.dark .border-neutral-100,
+html.dark .border-neutral-200,
+html.dark .border-zinc-100,
+html.dark .border-zinc-200,
+html.dark .border-zinc-300,
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  border-color: var(--toolyo-border) !important;
+}
+
+/* LIGHT MODE overrides for common dark classes */
+html:not(.dark) .bg-black,
+html:not(.dark) .bg-gray-900,
+html:not(.dark) .bg-gray-950,
+html:not(.dark) .bg-neutral-900,
+html:not(.dark) .bg-neutral-950,
+html:not(.dark) .bg-zinc-900,
+html:not(.dark) .bg-zinc-950,
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-950 {
+  background-color: var(--toolyo-surface) !important;
+}
+
+html:not(.dark) .text-white,
+html:not(.dark) .text-gray-50,
+html:not(.dark) .text-neutral-50,
+html:not(.dark) .text-zinc-50,
+html:not(.dark) .text-slate-50 {
+  color: var(--toolyo-text) !important;
+}
+
+html:not(.dark) .border-gray-700,
+html:not(.dark) .border-gray-800,
+html:not(.dark) .border-gray-900,
+html:not(.dark) .border-neutral-700,
+html:not(.dark) .border-neutral-800,
+html:not(.dark) .border-zinc-700,
+html:not(.dark) .border-zinc-800,
+html:not(.dark) .border-zinc-900,
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-900 {
+  border-color: var(--toolyo-border) !important;
+}
+
+/* Common specific fixes */
+html.dark button,
+html.dark a[class*="rounded"] {
+  color: var(--toolyo-text) !important;
+}
+
+html:not(.dark) button,
+html:not(.dark) a[class*="rounded"] {
+  color: var(--toolyo-text) !important;
+}
+
+html.dark button[class*="bg-black"],
+html.dark button[class*="bg-gray-900"],
+html.dark button[class*="bg-zinc-900"],
+html.dark button[class*="bg-slate-900"],
+html.dark a[class*="bg-black"],
+html.dark a[class*="bg-gray-900"],
+html.dark a[class*="bg-zinc-900"],
+html.dark a[class*="bg-slate-900"] {
+  background-color: var(--toolyo-surface-2) !important;
+}
+
+html:not(.dark) button[class*="bg-white"],
+html:not(.dark) a[class*="bg-white"] {
+  background-color: var(--toolyo-surface) !important;
+}
+
+/* Menu button / icon buttons */
 button[class*="h-10"],
 button[class*="h-11"],
 button[class*="h-12"],
+button[class*="w-10"],
+button[class*="w-11"],
+button[class*="w-12"],
 button[class*="p-2"],
 button[class*="p-3"] {
-  background: var(--toolyo-surface) !important;
+  background-color: var(--toolyo-surface) !important;
   color: var(--toolyo-text) !important;
   border-color: var(--toolyo-border) !important;
 }
@@ -435,26 +539,58 @@ button svg,
 a svg {
   color: var(--toolyo-text) !important;
   stroke: var(--toolyo-text) !important;
-  fill: none !important;
 }
 
-/* Ad slot helper text */
+/* Ad slot text */
 .toolyo-ad-label,
 .toolyo-ad-title {
   color: var(--toolyo-text-faint) !important;
 }
 
-/* Remove weird tinted backgrounds from broad utility combos */
-html.dark [class*="bg-neutral-"],
-html.dark [class*="bg-zinc-"],
-html.dark [class*="bg-gray-"] {
+/* Strong fallback for any hardcoded inline-ish utility mixes */
+html.dark [class*="bg-white/"],
+html.dark [class*="bg-gray-"],
+html.dark [class*="bg-slate-"],
+html.dark [class*="bg-zinc-"] {
   background-color: var(--toolyo-surface) !important;
 }
 
-html:not(.dark) [class*="bg-neutral-9"],
+html.dark [class*="text-gray-"],
+html.dark [class*="text-slate-"],
+html.dark [class*="text-zinc-"],
+html.dark [class*="text-neutral-"] {
+  color: var(--toolyo-text) !important;
+}
+
+html.dark [class*="border-gray-"],
+html.dark [class*="border-slate-"],
+html.dark [class*="border-zinc-"],
+html.dark [class*="border-neutral-"] {
+  border-color: var(--toolyo-border) !important;
+}
+
+html:not(.dark) [class*="bg-black"],
+html:not(.dark) [class*="bg-gray-9"],
 html:not(.dark) [class*="bg-zinc-9"],
-html:not(.dark) [class*="bg-gray-9"] {
+html:not(.dark) [class*="bg-slate-9"],
+html:not(.dark) [class*="bg-neutral-9"] {
   background-color: var(--toolyo-surface) !important;
+}
+
+html:not(.dark) [class*="text-white"] {
+  color: var(--toolyo-text) !important;
+}
+
+html:not(.dark) [class*="border-gray-7"],
+html:not(.dark) [class*="border-gray-8"],
+html:not(.dark) [class*="border-gray-9"],
+html:not(.dark) [class*="border-zinc-7"],
+html:not(.dark) [class*="border-zinc-8"],
+html:not(.dark) [class*="border-zinc-9"],
+html:not(.dark) [class*="border-slate-7"],
+html:not(.dark) [class*="border-slate-8"],
+html:not(.dark) [class*="border-slate-9"] {
+  border-color: var(--toolyo-border) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -467,4 +603,5 @@ html:not(.dark) [class*="bg-gray-9"] {
   }
 }
 
-/* TOOLYO_NEUTRAL_THEME_V3_END */
+/* TOOLYO_FINAL_THEME_RESET_END */
+

@@ -6,102 +6,91 @@ import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
+import ToolInputCard from "@/components/tool-input-card";
+import ToolOutputCard from "@/components/tool-output-card";
+import ToolFaqSchema from "@/components/tool-faq-schema";
+import ToolUseCases from "@/components/tool-use-cases";
 
 export default function JsonFormatterPage() {
   const title = "JSON Formatter";
   const description = "Format and validate JSON instantly.";
+  const [jsonInput, setJsonInput] = useState('{\n  "hello": "world"\n}');
+  const [mode, setMode] = useState<"format" | "minify">("format");
 
   useEffect(() => {
     addRecentTool("json-formatter");
   }, []);
 
-  const [jsonInput, setJsonInput] = useState('{\n  "hello": "world"\n}');
-  const [copied, setCopied] = useState(false);
-
-  const formattedJson = useMemo(() => {
+  const result = useMemo(() => {
     try {
-      return { ok: true, value: JSON.stringify(JSON.parse(jsonInput), null, 2) };
+      const parsed = JSON.parse(jsonInput);
+      return {
+        ok: true,
+        output: mode === "format" ? JSON.stringify(parsed, null, 2) : JSON.stringify(parsed),
+        status: mode === "format" ? "Valid JSON · formatted" : "Valid JSON · minified",
+      };
     } catch (error: unknown) {
       return {
         ok: false,
-        value: error instanceof Error ? error.message : "Invalid JSON",
+        output: error instanceof Error ? error.message : "Invalid JSON",
+        status: "Invalid JSON",
       };
     }
-  }, [jsonInput]);
-
-  const copyOutput = async () => {
-    if (!formattedJson.ok) return;
-    await navigator.clipboard.writeText(formattedJson.value);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
+  }, [jsonInput, mode]);
 
   return (
-    <ToolLayout
-      currentSlug="json-formatter"
-      title={title}
-      description={description}
-    >
+    <ToolLayout currentSlug="json-formatter" title={title} description={description}>
       <div className="space-y-4">
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => setMode("format")}
+            className={`rounded-xl border px-4 py-2 text-sm ${
+              mode === "format" ? "border-black bg-black text-white" : "border-zinc-200"
+            }`}
+            type="button"
+          >
+            Format
+          </button>
+          <button
+            onClick={() => setMode("minify")}
+            className={`rounded-xl border px-4 py-2 text-sm ${
+              mode === "minify" ? "border-black bg-black text-white" : "border-zinc-200"
+            }`}
+            type="button"
+          >
+            Minify
+          </button>
+        </div>
+
         <div className="grid gap-4 lg:grid-cols-2">
-          <div>
-            <div className="mb-2 text-sm font-medium">Input JSON</div>
+          <ToolInputCard label="Input JSON">
             <textarea
               value={jsonInput}
               onChange={(e) => setJsonInput(e.target.value)}
-              className="min-h-[260px] w-full rounded-2xl border border-zinc-200 p-4 font-mono text-sm"
+              className="min-h-[280px] w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 font-mono text-sm text-zinc-950 outline-none focus:border-zinc-500"
             />
-          </div>
-          <div>
-            <div className="mb-2 text-sm font-medium">Formatted output</div>
+          </ToolInputCard>
+
+          <ToolOutputCard
+            label="Output"
+            status={result.status}
+            statusTone={result.ok ? "success" : "error"}
+          >
             <textarea
               readOnly
-              value={formattedJson.value}
-              className={`min-h-[260px] w-full rounded-2xl border p-4 font-mono text-sm ${
-                formattedJson.ok ? "border-zinc-200" : "border-red-300 bg-red-50"
+              value={result.output}
+              className={`min-h-[280px] w-full rounded-2xl border p-4 font-mono text-sm ${
+                result.ok
+                  ? "border-zinc-300 bg-zinc-50 text-zinc-950"
+                  : "border-red-300 bg-red-50 text-red-700"
               }`}
             />
-          </div>
-        </div>
-
-        <div className="flex gap-3">
-          <button
-            onClick={copyOutput}
-            disabled={!formattedJson.ok}
-            className="rounded-xl bg-black px-4 py-2 text-white disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            {copied ? "Copied" : "Copy formatted JSON"}
-          </button>
+          </ToolOutputCard>
         </div>
       </div>
 
-      <ToolSeoContent
-        title="JSON Formatter"
-        description="Format and validate JSON instantly."
-        about={[
-          "JSON Formatter helps developers, testers, analysts, and API users make raw JSON easier to read and debug.",
-          "This tool formats valid JSON into a structured layout and shows an error message if the JSON is invalid, which makes it useful for API payloads, responses, and configuration files.",
-        ]}
-        steps={[
-          "Paste your raw JSON into the input field.",
-          "Check the formatted result instantly on the right side.",
-          "If the JSON is valid, copy the formatted output for easier reading or debugging.",
-        ]}
-        faq={[
-          {
-            question: "What happens if my JSON is invalid?",
-            answer: "The tool shows an error message instead of formatted output so you can identify and fix the issue.",
-          },
-          {
-            question: "Why format JSON?",
-            answer: "Formatted JSON is much easier to read, inspect, debug, and share than compressed or messy raw JSON.",
-          },
-          {
-            question: "Who uses a JSON formatter?",
-            answer: "Developers, QA testers, analysts, and anyone working with APIs or structured data.",
-          },
-        ]}
-      />
+            <ToolFaqSchema slug="json-formatter" />
+<ToolSeoContent title={title} description={description} slug="json-formatter" />
       <ToolFeaturedTools currentSlug="json-formatter" />
       <RelatedTools currentSlug="json-formatter" />
     </ToolLayout>

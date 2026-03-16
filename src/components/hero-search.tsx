@@ -53,7 +53,7 @@ export default function HeroSearch() {
 
   return (
     <div className="relative w-full">
-      <div className="flex w-full items-center rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-zinc-400">
+      <div className="flex w-full items-center rounded-2xl border border-zinc-300 bg-white px-4 py-3 shadow-sm transition focus-within:border-zinc-400">
         <svg
           className="mr-3 h-5 w-5 shrink-0 text-zinc-400"
           viewBox="0 0 20 20"
@@ -80,7 +80,7 @@ export default function HeroSearch() {
       </div>
 
       {focused && search.trim() && (
-        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl">
+        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-zinc-300 bg-white shadow-xl">
           {results.length > 0 ? (
             <div className="max-h-[360px] overflow-y-auto p-2">
               {results.map((tool) => (
@@ -88,18 +88,18 @@ export default function HeroSearch() {
                   key={tool.slug}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => openTool(tool.slug)}
-                  className="block w-full rounded-xl px-4 py-3 text-left transition hover:bg-zinc-50"
+                  className="block w-full rounded-xl px-4 py-3 text-left transition hover:bg-zinc-100"
                 >
                   <div className="text-xs uppercase tracking-wide text-zinc-400">
                     {tool.category}
                   </div>
                   <div className="mt-1 font-semibold text-zinc-900">{tool.name}</div>
-                  <div className="mt-1 text-sm text-zinc-500">{tool.description}</div>
+                  <div className="mt-1 text-sm text-zinc-700">{tool.description}</div>
                 </button>
               ))}
             </div>
           ) : (
-            <div className="p-4 text-sm text-zinc-500">No tools found.</div>
+            <div className="p-4 text-sm text-zinc-700">No tools found.</div>
           )}
         </div>
       )}

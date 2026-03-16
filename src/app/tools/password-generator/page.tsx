@@ -6,6 +6,8 @@ import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
+import ToolFaqSchema from "@/components/tool-faq-schema";
+import ToolUseCases from "@/components/tool-use-cases";
 
 function randomChar(chars: string) {
   return chars[Math.floor(Math.random() * chars.length)];
@@ -14,11 +16,6 @@ function randomChar(chars: string) {
 export default function PasswordGeneratorPage() {
   const title = "Password Generator";
   const description = "Generate secure passwords instantly.";
-
-  useEffect(() => {
-    addRecentTool("password-generator");
-  }, []);
-
   const [length, setLength] = useState(16);
   const [includeUpper, setIncludeUpper] = useState(true);
   const [includeLower, setIncludeLower] = useState(true);
@@ -26,6 +23,10 @@ export default function PasswordGeneratorPage() {
   const [includeSymbols, setIncludeSymbols] = useState(true);
   const [refresh, setRefresh] = useState(0);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    addRecentTool("password-generator");
+  }, []);
 
   const password = useMemo(() => {
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -83,23 +84,19 @@ export default function PasswordGeneratorPage() {
     return "Strong";
   }, [length, includeUpper, includeLower, includeNumbers, includeSymbols]);
 
-  const copyPassword = async () => {
+  const handleCopy = async () => {
     if (!password) return;
     await navigator.clipboard.writeText(password);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 1200);
   };
 
   return (
-    <ToolLayout
-      currentSlug="password-generator"
-      title={title}
-      description={description}
-    >
+    <ToolLayout currentSlug="password-generator" title={title} description={description}>
       <div className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border border-zinc-200 p-4">
-            <label className="mb-2 block text-sm font-medium">Length</label>
+            <label className="mb-2 block text-sm font-medium">Password length</label>
             <input
               type="number"
               min="4"
@@ -110,7 +107,7 @@ export default function PasswordGeneratorPage() {
             />
           </div>
           <div className="rounded-2xl border border-zinc-200 p-4">
-            <div className="text-sm text-zinc-500">Strength</div>
+            <div className="text-sm text-zinc-500">Strength estimate</div>
             <div className="mt-2 text-3xl font-bold">{strength}</div>
           </div>
         </div>
@@ -135,56 +132,38 @@ export default function PasswordGeneratorPage() {
         </div>
 
         <div className="rounded-2xl border border-zinc-200 p-4">
-          <div className="mb-2 text-sm font-medium">Generated password</div>
+          <div className="mb-2 flex items-center justify-between">
+            <div className="text-sm font-medium">Generated password</div>
+            <div className="text-xs text-zinc-500">{copied ? "Copied" : "Ready to copy"}</div>
+          </div>
+
           <textarea
             readOnly
             value={password}
             className="min-h-[120px] w-full rounded-2xl border border-zinc-200 p-4 font-mono text-sm"
           />
-          <div className="mt-4 flex gap-3">
+
+          <div className="mt-4 flex flex-wrap gap-3">
             <button
               onClick={() => setRefresh((v) => v + 1)}
               className="rounded-xl bg-black px-4 py-2 text-white"
+              type="button"
             >
               Generate again
             </button>
             <button
-              onClick={copyPassword}
+              onClick={handleCopy}
               className="rounded-xl border border-zinc-200 px-4 py-2"
+              type="button"
             >
-              {copied ? "Copied" : "Copy"}
+              Copy password
             </button>
           </div>
         </div>
       </div>
 
-      <ToolSeoContent
-        title="Password Generator"
-        description="Generate secure passwords instantly."
-        about={[
-          "Password Generator helps you create stronger passwords quickly in the browser without relying on easy-to-guess patterns.",
-          "This tool lets you choose length and character types such as uppercase letters, lowercase letters, numbers, and symbols. It is useful for creating better passwords for personal and professional accounts.",
-        ]}
-        steps={[
-          "Choose the password length you want.",
-          "Select which character types to include.",
-          "Generate a password and copy it to use where needed.",
-        ]}
-        faq={[
-          {
-            question: "What makes a password strong?",
-            answer: "A strong password is usually longer and includes a mix of uppercase letters, lowercase letters, numbers, and symbols.",
-          },
-          {
-            question: "Should I use symbols in passwords?",
-            answer: "In most cases yes, because symbols increase complexity and make passwords harder to guess.",
-          },
-          {
-            question: "Can I generate multiple passwords?",
-            answer: "Yes. You can generate again as many times as you want until you get a password you like.",
-          },
-        ]}
-      />
+            <ToolFaqSchema slug="password-generator" />
+<ToolSeoContent title={title} description={description} slug="password-generator" />
       <ToolFeaturedTools currentSlug="password-generator" />
       <RelatedTools currentSlug="password-generator" />
     </ToolLayout>

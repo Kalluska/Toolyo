@@ -1,5 +1,6 @@
-import Link from "next/link";
-import { tools } from "@/data/tools";
+import { tools, type Tool } from "@/data/tools";
+import { relatedToolsMap } from "@/lib/relatedToolsMap";
+import ToolCard from "@/components/tool-card";
 
 type RelatedToolsProps = {
   currentSlug: string;
@@ -12,7 +13,12 @@ export default function RelatedTools({
 }: RelatedToolsProps) {
   const currentTool = tools.find((tool) => tool.slug === currentSlug);
 
-  const sameCategory = tools
+  const mappedSlugs = relatedToolsMap[currentSlug] || [];
+  const mappedTools: Tool[] = mappedSlugs
+    .map((slug) => tools.find((tool) => tool.slug === slug))
+    .filter((tool): tool is Tool => Boolean(tool));
+
+  const fallbackTools: Tool[] = tools
     .filter((tool) => tool.slug !== currentSlug)
     .filter((tool) =>
       currentCategory
@@ -21,28 +27,23 @@ export default function RelatedTools({
           ? tool.category === currentTool.category
           : false
     )
-    .slice(0, 6);
+    .filter((tool) => !mappedSlugs.includes(tool.slug))
+    .slice(0, Math.max(0, 6 - mappedTools.length));
 
-  if (sameCategory.length === 0) return null;
+  const related: Tool[] = [...mappedTools, ...fallbackTools].slice(0, 6);
+
+  if (related.length === 0) return null;
 
   return (
-    <section className="mt-8 rounded-2xl border border-zinc-200 p-6">
-      <h3 className="text-2xl font-bold">Related tools</h3>
-      <p className="mt-2 text-zinc-600">
-        Explore other tools in the same category to continue your workflow.
+    <section className="mt-8 rounded-2xl border border-zinc-300 bg-white p-6 shadow-sm">
+      <h3 className="text-2xl font-bold text-zinc-950">Related tools</h3>
+      <p className="mt-2 text-zinc-700">
+        Continue your workflow with closely related tools on Toolyo.
       </p>
 
       <div className="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {sameCategory.map((tool) => (
-          <Link
-            key={tool.slug}
-            href={`/tools/${tool.slug}`}
-            className="rounded-xl border border-zinc-200 p-4 transition hover:border-zinc-400"
-          >
-            <div className="text-sm text-zinc-500">{tool.category}</div>
-            <div className="mt-1 font-semibold">{tool.name}</div>
-            <p className="mt-2 text-sm text-zinc-600">{tool.description}</p>
-          </Link>
+        {related.map((tool) => (
+          <ToolCard key={tool.slug} tool={tool} compact />
         ))}
       </div>
     </section>

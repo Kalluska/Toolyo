@@ -48,27 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          id="toolyo-theme-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-(function() {
-  try {
-    var saved = localStorage.getItem("theme");
-    var dark = saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  } catch (e) {}
-})();
-            `,
-          }}
-        />
-      </head>
+    <html lang="en">
       <body>
         <GoogleAnalytics />{children}  <CommandPalette />
 </body>

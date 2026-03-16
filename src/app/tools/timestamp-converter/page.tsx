@@ -6,16 +6,18 @@ import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
+import ToolInputCard from "@/components/tool-input-card";
+import ToolFaqSchema from "@/components/tool-faq-schema";
+import ToolUseCases from "@/components/tool-use-cases";
 
 export default function TimestampConverterPage() {
   const title = "Timestamp Converter";
   const description = "Convert Unix timestamps instantly.";
+  const [value, setValue] = useState(String(Math.floor(Date.now() / 1000)));
 
   useEffect(() => {
     addRecentTool("timestamp-converter");
   }, []);
-
-  const [value, setValue] = useState(String(Math.floor(Date.now() / 1000)));
 
   const result = useMemo(() => {
     const trimmed = value.trim();
@@ -37,18 +39,16 @@ export default function TimestampConverterPage() {
   }, [value]);
 
   return (
-    <ToolLayout
-      currentSlug="timestamp-converter"
-      title={title}
-      description={description}
-    >
+    <ToolLayout currentSlug="timestamp-converter" title={title} description={description}>
       <div className="space-y-6">
-        <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter Unix timestamp..."
-          className="w-full rounded-2xl border border-zinc-200 p-4"
-        />
+        <ToolInputCard label="Unix timestamp">
+          <input
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Enter Unix timestamp..."
+            className="w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-zinc-500"
+          />
+        </ToolInputCard>
 
         {result.ok ? (
           <div className="space-y-4">
@@ -72,7 +72,8 @@ export default function TimestampConverterPage() {
         )}
       </div>
 
-      <ToolSeoContent title="{title}" description="{description}" slug="timestamp-converter" />
+            <ToolFaqSchema slug="timestamp-converter" />
+<ToolSeoContent title={title} description={description} slug="timestamp-converter" />
       <ToolFeaturedTools currentSlug="timestamp-converter" />
       <RelatedTools currentSlug="timestamp-converter" />
     </ToolLayout>

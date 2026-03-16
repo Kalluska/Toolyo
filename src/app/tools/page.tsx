@@ -67,18 +67,18 @@ function countToolsByCategory(category: string) {
 
 export default function ToolsHubPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
-      <header className="border-b border-zinc-200 bg-white">
+    <div className="min-h-screen bg-zinc-100 text-zinc-900">
+      <header className="border-b border-zinc-300 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-5">
           <Link href="/" className="block">
-            <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">Hub</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-zinc-700">Hub</div>
             <h1 className="text-2xl font-bold">Toolyo Tools</h1>
           </Link>
         </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-6 py-10">
-        <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-zinc-100">
+        <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-zinc-200">
           <div className="max-w-4xl">
             <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
               All Categories
@@ -86,7 +86,7 @@ export default function ToolsHubPage() {
             <h2 className="mt-3 text-5xl font-bold leading-tight">
               Browse all Toolyo tools by category
             </h2>
-            <p className="mt-5 text-lg leading-8 text-zinc-600">
+            <p className="mt-5 text-lg leading-8 text-zinc-700">
               Toolyo organizes its tools into focused categories so you can find the right utility
               faster. Browse text tools, developer tools, SEO tools, converters, and generators.
             </p>
@@ -98,19 +98,19 @@ export default function ToolsHubPage() {
                 <Link
                   key={category.href}
                   href={category.href}
-                  className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5 transition hover:border-zinc-400"
+                  className="rounded-2xl border border-zinc-300 bg-zinc-100 p-5 transition hover:border-zinc-500"
                 >
-                  <div className="text-sm text-zinc-500">
+                  <div className="text-sm text-zinc-700">
                     {countToolsByCategory(category.key)} tools
                   </div>
                   <div className="mt-1 text-2xl font-bold">{category.title}</div>
-                  <p className="mt-2 text-sm text-zinc-600">{category.description}</p>
+                  <p className="mt-2 text-sm text-zinc-700">{category.description}</p>
                 </Link>
               ))}
             </div>
           </section>
 
-          <section className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
+          <section className="mt-10 rounded-2xl border border-zinc-300 bg-zinc-100 p-6">
             <h3 className="text-2xl font-bold">Why use the tools hub?</h3>
             <div className="mt-3 space-y-3 text-zinc-700">
               <p>

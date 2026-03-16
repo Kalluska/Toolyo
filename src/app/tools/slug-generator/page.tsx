@@ -6,93 +6,81 @@ import { addRecentTool } from "@/lib/recentTools";
 import ToolSeoContent from "@/components/tool-seo-content";
 import ToolFeaturedTools from "@/components/tool-featured-tools";
 import RelatedTools from "@/components/related-tools";
+import ToolInputCard from "@/components/tool-input-card";
+import ToolOutputCard from "@/components/tool-output-card";
+import ToolFaqSchema from "@/components/tool-faq-schema";
+import ToolUseCases from "@/components/tool-use-cases";
 
 export default function SlugGeneratorPage() {
   const title = "Slug Generator";
   const description = "Convert text into a clean URL slug.";
+  const [text, setText] = useState("");
+  const [strict, setStrict] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     addRecentTool("slug-generator");
   }, []);
 
-  const [text, setText] = useState("");
-  const [copied, setCopied] = useState(false);
-
   const slug = useMemo(() => {
-    return text
-      .toLowerCase()
-      .normalize("NFKD")
-      .replace(/[^\w\s-]/g, "")
+    let value = text.toLowerCase().normalize("NFKD");
+
+    if (strict) {
+      value = value.replace(/[^\w\s-]/g, "");
+    }
+
+    return value
       .trim()
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
-  }, [text]);
+  }, [text, strict]);
 
-  const copySlug = async () => {
+  const handleCopy = async () => {
     if (!slug) return;
     await navigator.clipboard.writeText(slug);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 1200);
   };
 
   return (
-    <ToolLayout
-      currentSlug="slug-generator"
-      title={title}
-      description={description}
-    >
+    <ToolLayout currentSlug="slug-generator" title={title} description={description}>
       <div className="space-y-6">
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Type a title or phrase here..."
-          className="min-h-[180px] w-full rounded-2xl border border-zinc-200 p-4 outline-none focus:border-zinc-400"
-        />
+        <ToolInputCard label="Input title or phrase">
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Type a title or phrase here..."
+            className="min-h-[180px] w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-zinc-500"
+          />
+        </ToolInputCard>
 
-        <div>
-          <div className="mb-2 text-sm font-medium">Slug</div>
+        <label className="flex items-center gap-3 rounded-xl border border-zinc-200 p-3">
+          <input type="checkbox" checked={strict} onChange={(e) => setStrict(e.target.checked)} />
+          <span>Strict URL mode</span>
+        </label>
+
+        <ToolOutputCard
+          label="Generated slug"
+          status={copied ? "Copied" : "Ready to copy"}
+        >
           <textarea
             readOnly
             value={slug}
-            className="min-h-[120px] w-full rounded-2xl border border-zinc-200 p-4"
+            className="min-h-[120px] w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 text-zinc-950"
           />
-        </div>
+        </ToolOutputCard>
 
         <button
-          onClick={copySlug}
+          onClick={handleCopy}
           className="rounded-xl border border-zinc-200 px-4 py-2"
+          type="button"
         >
-          {copied ? "Copied" : "Copy slug"}
+          Copy slug
         </button>
       </div>
 
-      <ToolSeoContent
-        title="Slug Generator"
-        description="Convert text into a clean URL slug."
-        about={[
-          "Slug Generator is useful for blog posts, landing pages, documentation, and any URL that should stay short, readable, and SEO-friendly.",
-          "This tool converts titles and phrases into clean slugs by removing extra characters and replacing spaces with hyphens. It helps keep URLs organized and easier to understand.",
-        ]}
-        steps={[
-          "Paste or type a title, phrase, or heading into the input field.",
-          "Review the generated slug instantly in the output box.",
-          "Copy the slug and use it in your URL or content system.",
-        ]}
-        faq={[
-          {
-            question: "What is a slug?",
-            answer: "A slug is the readable part of a URL, often based on the title of a page or post.",
-          },
-          {
-            question: "Why are slugs important for SEO?",
-            answer: "Clean slugs make URLs easier to read and can help improve clarity for users and search engines.",
-          },
-          {
-            question: "Does this tool remove special characters?",
-            answer: "Yes. It normalizes the text into a cleaner URL-friendly format.",
-          },
-        ]}
-      />
+            <ToolFaqSchema slug="slug-generator" />
+<ToolSeoContent title={title} description={description} slug="slug-generator" />
       <ToolFeaturedTools currentSlug="slug-generator" />
       <RelatedTools currentSlug="slug-generator" />
     </ToolLayout>
