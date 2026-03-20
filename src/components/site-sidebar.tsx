@@ -60,29 +60,52 @@ function ToolCard({
     <Link
       href={`/tools/${tool.slug}`}
       onClick={onClick}
-      className={`block rounded-2xl border px-4 py-3 transition ${
+      className={
         active
-          ? "border-black bg-black text-white shadow-md"
-          : "border-zinc-300 bg-white hover:border-zinc-500 hover:bg-zinc-50"
-      }`}
+          ? "block rounded-2xl border border-transparent bg-[var(--button-bg)] px-4 py-3 text-[var(--button-text)] shadow-md"
+          : "block rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-3 text-[var(--text-main)] shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-soft)]"
+      }
     >
       <div className="flex items-start gap-3">
-        <div className="pt-0.5 text-xl leading-none">
+        <div className="pt-0.5 text-xl leading-none opacity-90">
           {getToolIcon(tool.category, tool.slug)}
         </div>
 
         <div className="min-w-0 flex-1">
-          <div className={`font-semibold ${active ? "text-white" : "text-zinc-950"}`}>
-            {tool.name}
-          </div>
+          <div className="font-semibold">{tool.name}</div>
           <div
-            className={`mt-1 text-sm ${
-              active ? "text-zinc-200" : "text-zinc-700"
+            className={`mt-1 text-sm leading-6 ${
+              active ? "text-[var(--button-text)]/80" : "text-[var(--text-soft)]"
             }`}
           >
             {tool.description}
           </div>
         </div>
+      </div>
+    </Link>
+  );
+}
+
+function PanelLink({
+  href,
+  title,
+  description,
+  onClick,
+}: {
+  href: string;
+  title: string;
+  description: string;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="block rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-4 shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-soft)]"
+    >
+      <div className="font-semibold text-[var(--text-main)]">{title}</div>
+      <div className="mt-1 text-sm leading-6 text-[var(--text-soft)]">
+        {description}
       </div>
     </Link>
   );
@@ -141,55 +164,59 @@ export default function SiteSidebar({
       />
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black/55" onClick={onClose} />
+        <div
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px]"
+          onClick={onClose}
+        />
       )}
 
       <aside
-        className={`fixed left-0 top-0 z-50 h-full w-[360px] transform border-r border-zinc-300 bg-zinc-100 shadow-2xl transition-transform duration-300 ${
+        className={`fixed left-0 top-0 z-50 h-full w-[360px] border-r border-[var(--border-main)] bg-[var(--bg-main)] shadow-2xl transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-zinc-300 bg-white px-5 py-4">
+        <div className="flex items-center justify-between border-b border-[var(--border-main)] bg-[var(--bg-elevated)] px-5 py-4">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-zinc-600">Menu</div>
-            <div className="text-2xl font-bold text-zinc-950">Toolyo</div>
+            <div className="text-[11px] uppercase tracking-[0.24em] text-[var(--text-faint)]">
+              Menu
+            </div>
+            <div className="mt-1 text-2xl font-bold text-[var(--text-main)]">
+              Toolyo
+            </div>
           </div>
+
           <button
             onClick={onClose}
-            className="rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:border-zinc-500"
+            className="rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-2 text-sm font-medium text-[var(--text-main)] shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-soft)]"
           >
             Close
           </button>
         </div>
 
-        <div className="h-[calc(100%-81px)] overflow-y-auto p-4">
-          <div className="mb-6 space-y-2">
-            <Link
+        <div className="h-[calc(100%-85px)] overflow-y-auto px-4 py-4">
+          <div className="mb-6">
+            <PanelLink
               href="/"
               onClick={onClose}
-              className="block rounded-2xl border border-zinc-300 bg-white px-4 py-4 transition hover:border-zinc-500"
-            >
-              <div className="font-semibold text-zinc-950">Home</div>
-              <div className="mt-1 text-sm text-zinc-700">
-                Go back to the main Toolyo homepage.
-              </div>
-            </Link>
+              title="Home"
+              description="Go back to the main Toolyo homepage."
+            />
           </div>
 
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search tools..."
-            className="mb-6 w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-zinc-500"
+            className="mb-6 w-full rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-3 text-[var(--text-main)] outline-none placeholder:text-[var(--text-faint)] focus:border-[var(--border-strong)]"
           />
 
           {isSearching && (
             <div className="mb-6">
-              <div className="mb-2 flex items-center justify-between px-1">
-                <div className="text-xs font-semibold uppercase tracking-wide text-zinc-600">
+              <div className="mb-3 flex items-center justify-between px-1">
+                <div className="text-xs font-semibold uppercase tracking-wide text-[var(--text-faint)]">
                   Search results
                 </div>
-                <div className="text-xs text-zinc-600">
+                <div className="text-xs text-[var(--text-faint)]">
                   {filteredTools.length} result{filteredTools.length === 1 ? "" : "s"}
                 </div>
               </div>
@@ -206,7 +233,7 @@ export default function SiteSidebar({
                   ))}
                 </div>
               ) : (
-                <div className="rounded-2xl border border-dashed border-zinc-400 bg-white p-4 text-sm text-zinc-700">
+                <div className="rounded-2xl border border-dashed border-[var(--border-main)] bg-[var(--bg-elevated)] p-4 text-sm text-[var(--text-soft)]">
                   No tools found.
                 </div>
               )}
@@ -215,7 +242,7 @@ export default function SiteSidebar({
 
           {!isSearching && recentTools.length > 0 && (
             <div className="mb-6">
-              <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-600">
+              <div className="mb-3 px-1 text-xs font-semibold uppercase tracking-wide text-[var(--text-faint)]">
                 Recently used
               </div>
               <div className="space-y-2">
@@ -235,7 +262,7 @@ export default function SiteSidebar({
             <div className="space-y-6">
               {Object.entries(groupedTools).map(([category, categoryTools]) => (
                 <div key={category}>
-                  <div className="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-zinc-600">
+                  <div className="mb-3 px-1 text-xs font-semibold uppercase tracking-wide text-[var(--text-faint)]">
                     {category}
                   </div>
                   <div className="space-y-2">
@@ -256,30 +283,34 @@ export default function SiteSidebar({
           <div className="mt-8 space-y-3">
             <button
               onClick={() => setContactOpen(true)}
-              className="block w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-left transition hover:border-zinc-500"
+              className="block w-full rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-3 text-left shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-soft)]"
             >
-              <div className="font-semibold text-zinc-950">Request a tool</div>
-              <div className="mt-1 text-sm text-zinc-700">
+              <div className="font-semibold text-[var(--text-main)]">
+                Request a tool
+              </div>
+              <div className="mt-1 text-sm leading-6 text-[var(--text-soft)]">
                 Suggest a new tool idea for Toolyo.
               </div>
             </button>
 
             <button
               onClick={() => setFeedbackOpen(true)}
-              className="block w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-left transition hover:border-zinc-500"
+              className="block w-full rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-3 text-left shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-soft)]"
             >
-              <div className="font-semibold text-zinc-950">Send feedback</div>
-              <div className="mt-1 text-sm text-zinc-700">
+              <div className="font-semibold text-[var(--text-main)]">
+                Send feedback
+              </div>
+              <div className="mt-1 text-sm leading-6 text-[var(--text-soft)]">
                 Report issues or share improvement ideas.
               </div>
             </button>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-zinc-300 bg-white p-4">
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-600">
+          <div className="mt-8 rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] p-4 shadow-sm">
+            <div className="text-sm font-semibold uppercase tracking-wide text-[var(--text-faint)]">
               About Toolyo
             </div>
-            <p className="mt-2 text-sm text-zinc-700">
+            <p className="mt-2 text-sm leading-7 text-[var(--text-soft)]">
               Toolyo is a growing collection of simple browser-based tools for text,
               SEO, and developer workflows.
             </p>

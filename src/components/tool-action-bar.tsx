@@ -51,6 +51,9 @@ type ToolActionBarProps = {
   currentSlug: string;
 };
 
+const actionButtonClass =
+  "inline-flex items-center justify-center rounded-2xl border border-[var(--border-main)] bg-[var(--bg-soft)] px-4 py-2.5 text-sm font-semibold text-[var(--text-main)] shadow-sm transition hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)]";
+
 export default function ToolActionBar({ currentSlug }: ToolActionBarProps) {
   const withRoot = (fn: (root: HTMLElement) => void) => {
     const root = document.getElementById("toolyo-tool-root");
@@ -106,7 +109,10 @@ export default function ToolActionBar({ currentSlug }: ToolActionBarProps) {
       }
 
       if (currentSlug === "url-parser" && editable.length >= 1) {
-        setReactFieldValue(editable[0], "https://toolyo-kappa.vercel.app/tools/word-counter?lang=en&source=demo#top");
+        setReactFieldValue(
+          editable[0],
+          "https://toolyo-kappa.vercel.app/tools/word-counter?lang=en&source=demo#top"
+        );
       }
 
       if (currentSlug === "timestamp-converter" && editable.length >= 1) {
@@ -148,26 +154,16 @@ export default function ToolActionBar({ currentSlug }: ToolActionBarProps) {
   };
 
   return (
-    <div className="mb-6 flex flex-wrap gap-2">
-      <button
-        onClick={handleClear}
-        className="rounded-xl border border-zinc-300 px-4 py-2 text-sm font-medium transition hover:border-zinc-500"
-        type="button"
-      >
+    <div className="mb-6 flex flex-wrap gap-3">
+      <button onClick={handleClear} className={actionButtonClass} type="button">
         Clear
       </button>
-      <button
-        onClick={handleSample}
-        className="rounded-xl border border-zinc-300 px-4 py-2 text-sm font-medium transition hover:border-zinc-500"
-        type="button"
-      >
+
+      <button onClick={handleSample} className={actionButtonClass} type="button">
         Sample
       </button>
-      <button
-        onClick={handleSelectInput}
-        className="rounded-xl border border-zinc-300 px-4 py-2 text-sm font-medium transition hover:border-zinc-500"
-        type="button"
-      >
+
+      <button onClick={handleSelectInput} className={actionButtonClass} type="button">
         Select input
       </button>
     </div>

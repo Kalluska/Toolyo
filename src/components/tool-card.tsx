@@ -18,7 +18,7 @@ export default function ToolCard({
   return (
     <Link
       href={href || `/tools/${tool.slug}`}
-      className={`toolyo-card group block rounded-2xl border border-zinc-300 bg-white transition hover:-translate-y-[1px] hover:border-zinc-500 hover:shadow-md ${
+      className={`toolyo-card group block rounded-2xl border border-zinc-200 bg-white/95 transition hover:-translate-y-[2px] hover:border-zinc-400 hover:shadow-lg hover:shadow-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-600 dark:hover:shadow-black/40 ${
         compact ? "p-4" : "p-5"
       }`}
     >
@@ -29,22 +29,22 @@ export default function ToolCard({
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-3">
-            <div className="truncate text-lg font-semibold text-zinc-950">
+            <div className="truncate text-lg font-semibold text-zinc-950 dark:text-zinc-50">
               {tool.name}
             </div>
 
             {badge ? (
-              <span className="shrink-0 rounded-full bg-zinc-900 px-2.5 py-1 text-[11px] font-medium text-white">
+              <span className="shrink-0 rounded-full bg-zinc-900 px-2.5 py-1 text-[11px] font-medium text-white shadow-sm shadow-black/20 dark:bg-white dark:text-black">
                 {badge}
               </span>
             ) : null}
           </div>
 
-          <div className="mt-1 inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-zinc-700">
+          <div className="mt-1 inline-flex rounded-full border border-zinc-200 bg-zinc-100 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-zinc-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-zinc-300">
             {tool.category}
           </div>
 
-          <p className="mt-3 text-sm leading-6 text-zinc-700">
+          <p className="mt-3 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
             {tool.description}
           </p>
         </div>

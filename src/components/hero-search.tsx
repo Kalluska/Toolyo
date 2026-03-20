@@ -53,9 +53,9 @@ export default function HeroSearch() {
 
   return (
     <div className="relative w-full">
-      <div className="flex w-full items-center rounded-2xl border border-zinc-300 bg-white px-4 py-3 shadow-sm transition focus-within:border-zinc-400">
+      <div className="flex w-full items-center rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] px-4 py-3 shadow-sm transition focus-within:border-[var(--border-strong)] focus-within:bg-[var(--bg-elevated)] focus-within:shadow-md">
         <svg
-          className="mr-3 h-5 w-5 shrink-0 text-zinc-400"
+          className="mr-3 h-5 w-5 shrink-0 text-[var(--text-faint)]"
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
@@ -75,12 +75,12 @@ export default function HeroSearch() {
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           placeholder="Search tools..."
-          className="w-full bg-transparent text-sm outline-none placeholder:text-zinc-400"
+          className="w-full border-0 bg-transparent text-base text-[var(--text-main)] outline-none placeholder:text-[var(--text-faint)]"
         />
       </div>
 
       {focused && search.trim() && (
-        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-2xl border border-zinc-300 bg-white shadow-xl">
+        <div className="absolute left-0 right-0 top-[calc(100%+10px)] z-30 overflow-hidden rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] shadow-2xl">
           {results.length > 0 ? (
             <div className="max-h-[360px] overflow-y-auto p-2">
               {results.map((tool) => (
@@ -88,18 +88,22 @@ export default function HeroSearch() {
                   key={tool.slug}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => openTool(tool.slug)}
-                  className="block w-full rounded-xl px-4 py-3 text-left transition hover:bg-zinc-100"
+                  className="block w-full rounded-xl px-4 py-3 text-left transition hover:bg-[var(--bg-soft)]"
                 >
-                  <div className="text-xs uppercase tracking-wide text-zinc-400">
+                  <div className="text-xs uppercase tracking-[0.18em] text-[var(--text-faint)]">
                     {tool.category}
                   </div>
-                  <div className="mt-1 font-semibold text-zinc-900">{tool.name}</div>
-                  <div className="mt-1 text-sm text-zinc-700">{tool.description}</div>
+                  <div className="mt-1 font-semibold text-[var(--text-main)]">
+                    {tool.name}
+                  </div>
+                  <div className="mt-1 text-sm leading-6 text-[var(--text-soft)]">
+                    {tool.description}
+                  </div>
                 </button>
               ))}
             </div>
           ) : (
-            <div className="p-4 text-sm text-zinc-700">No tools found.</div>
+            <div className="p-4 text-sm text-[var(--text-soft)]">No tools found.</div>
           )}
         </div>
       )}

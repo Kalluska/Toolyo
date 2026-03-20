@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { getToolBySlug, getCategoryPath } from "@/lib/tool-helpers";
 import SiteSidebar from "@/components/site-sidebar";
 import SiteFooter from "@/components/site-footer";
 import ToolActionBar from "@/components/tool-action-bar";
 import OutputActionBar from "@/components/output-action-bar";
 import AdSlot from "@/components/ad-slot";
-import ThemeToggle from "@/components/ThemeToggle"
+import ThemeToggle from "@/components/theme-toggle";
 
 type ToolLayoutProps = {
   currentSlug: string;
@@ -24,12 +25,15 @@ export default function ToolLayout({
 }: ToolLayoutProps) {
   const [search, setSearch] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const toolInfo = getToolBySlug(currentSlug);
+  const categoryPath = getCategoryPath(toolInfo?.category);
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: title,
     applicationCategory: "DeveloperApplication",
+    applicationSubCategory: toolInfo?.category || "Utilities",
     operatingSystem: "All",
     description,
     url: `https://toolyo-kappa.vercel.app/tools/${currentSlug}`,
@@ -41,7 +45,7 @@ export default function ToolLayout({
   };
 
   return (
-    <div className="min-h-screen bg-zinc-100 text-zinc-900">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -55,31 +59,37 @@ export default function ToolLayout({
         currentSlug={currentSlug}
       />
 
-      <header className="border-b border-zinc-300 bg-white">
+      <header className="border-b border-[var(--border-main)] bg-[var(--bg-elevated)]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="rounded-xl border border-zinc-300 p-3 transition hover:border-zinc-500"
+              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--border-main)] bg-[var(--bg-elevated)] shadow-sm"
               aria-label="Open tools menu"
             >
               <div className="flex w-5 flex-col gap-1">
-                <span className="h-0.5 w-full bg-zinc-900" />
-                <span className="h-0.5 w-full bg-zinc-900" />
-                <span className="h-0.5 w-full bg-zinc-900" />
+                <span className="h-0.5 w-full rounded-full bg-[var(--text-main)]" />
+                <span className="h-0.5 w-full rounded-full bg-[var(--text-main)]" />
+                <span className="h-0.5 w-full rounded-full bg-[var(--text-main)]" />
               </div>
             </button>
 
             <Link href="/" className="block">
-              <div className="text-xs uppercase tracking-[0.2em] text-zinc-700">MVP</div>
-              <h1 className="text-2xl font-bold">Toolyo</h1>
+              <div className="text-[11px] uppercase tracking-[0.28em] text-[var(--text-faint)]">
+                MVP
+              </div>
+              <h1 className="text-[26px] font-bold leading-8 text-[var(--text-main)]">
+                Toolyo
+              </h1>
             </Link>
           </div>
 
           <div className="flex items-center gap-3">
-  <div className="rounded-full border border-zinc-300 px-4 py-2 text-sm border-gray-300 bg-white/80 text-gray-900 transition-all duration-300 dark:border-gray-700 dark:bg-white/5 dark:text-white"><span className="text-gray-900 dark:text-white transition-colors duration-300">Text + Developer Tools</span></div>
-  <ThemeToggle />
-</div>
+            <div className="rounded-full border border-[var(--border-main)] bg-[var(--bg-soft)] px-4 py-2 text-sm text-[var(--text-soft)] shadow-sm">
+              <span>Text + Developer Tools</span>
+            </div>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -92,21 +102,52 @@ export default function ToolLayout({
 
             <main
               id="toolyo-tool-root"
-              className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-zinc-200"
+              className="rounded-[32px] border border-[var(--border-main)] bg-[var(--bg-elevated)] p-6 shadow-[var(--shadow-lg)]"
             >
-          <div className="mb-6">
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
-              Tool
-            </div>
-            <h2 className="mt-2 text-3xl font-bold">{title}</h2>
-            <p className="mt-2 text-zinc-700">{description}</p>
-          </div>
+              <div className="mb-6">
+                <div className="flex items-center gap-3">
+                  {categoryPath ? (
+                    <Link
+                      href={categoryPath}
+                      className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]"
+                    >
+                      {toolInfo?.category} Tools
+                    </Link>
+                  ) : (
+                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]">
+                      Tool
+                    </div>
+                  )}
 
-          <ToolActionBar currentSlug={currentSlug} />
-          <OutputActionBar />
+                  <span className="text-[var(--text-faint)]">•</span>
+                  <span className="text-xs text-[var(--text-faint)]">Updated weekly</span>
+                </div>
 
-          {children}
-        </main>
+                <h2 className="mt-2 text-3xl font-bold text-[var(--text-main)]">
+                  {title}
+                </h2>
+
+                <p className="mt-2 max-w-3xl text-[var(--text-soft)]">
+                  {description}
+                </p>
+
+                {categoryPath ? (
+                  <div className="mt-3">
+                    <Link
+                      href={categoryPath}
+                      className="text-sm text-[var(--text-soft)] underline decoration-dotted underline-offset-4"
+                    >
+                      Browse more {toolInfo?.category?.toLowerCase()} tools
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+
+              <ToolActionBar currentSlug={currentSlug} />
+              <OutputActionBar />
+
+              {children}
+            </main>
 
             <div>
               <AdSlot label="Tool After Tool" minHeightClass="min-h-[110px]" />

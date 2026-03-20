@@ -1,115 +1,68 @@
-"use client";
-
-import Link from "next/link";
-import { useState } from "react";
-import ContactModal from "@/components/contact-modal";
-
 export default function SiteFooter() {
-  const [contactOpen, setContactOpen] = useState(false);
-
   return (
-    <>
-      <ContactModal
-        isOpen={contactOpen}
-        onClose={() => setContactOpen(false)}
-        title="Contact Toolyo"
-        subject="Toolyo Contact"
-      />
-
-      <footer className="mt-12 border-t border-zinc-300 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-4">
-          <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+    <footer className="mt-16 border-t border-[var(--border-main)] bg-[var(--bg-elevated)]">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-4">
+          <div className="max-w-sm">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]">
               Toolyo
             </div>
-            <h3 className="mt-2 text-xl font-bold">Simple browser-based tools</h3>
-            <p className="mt-3 max-w-md text-sm leading-6 text-zinc-700">
-              Toolyo is a growing collection of text, SEO, and developer tools built
-              for speed, simplicity, and real search demand.
+            <h3 className="mt-4 text-3xl font-bold leading-tight text-[var(--text-main)]">
+              Simple browser-based tools
+            </h3>
+            <p className="mt-4 text-base leading-8 text-[var(--text-soft)]">
+              Toolyo is a growing collection of text, SEO, and developer tools
+              built for speed, simplicity, and real search demand.
             </p>
           </div>
 
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]">
               Navigation
             </div>
-            <div className="mt-3 space-y-2 text-sm">
-              <Link href="/" className="block text-zinc-700 hover:text-zinc-900">
-                Home
-              </Link>
-              <Link href="/tools" className="block text-zinc-700 hover:text-zinc-900">
-                All Tools
-              </Link>
-              <Link href="/about" className="block text-zinc-700 hover:text-zinc-900">
-                About
-              </Link>
-              <Link href="/site-map" className="block text-zinc-700 hover:text-zinc-900">
-                HTML Sitemap
-              </Link>
-              <a
-                href="/sitemap.xml"
-                className="block text-zinc-700 hover:text-zinc-900"
-              >
-                XML Sitemap
-              </a>
-              <button
-                onClick={() => setContactOpen(true)}
-                className="block text-left text-zinc-700 hover:text-zinc-900"
-              >
-                Contact
-              </button>
+            <div className="mt-4 flex flex-col gap-3 text-[15px] text-[var(--text-soft)]">
+              <a href="/">Home</a>
+              <a href="/tools">All Tools</a>
+              <a href="/about">About</a>
+              <a href="/sitemap.html">HTML Sitemap</a>
+              <a href="/sitemap.xml">XML Sitemap</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
 
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]">
               Categories
             </div>
-            <div className="mt-3 space-y-2 text-sm">
-              <Link href="/text-tools" className="block text-zinc-700 hover:text-zinc-900">
-                Text Tools
-              </Link>
-              <Link href="/developer-tools" className="block text-zinc-700 hover:text-zinc-900">
-                Developer Tools
-              </Link>
-              <Link href="/seo-tools" className="block text-zinc-700 hover:text-zinc-900">
-                SEO Tools
-              </Link>
-              <Link href="/converters" className="block text-zinc-700 hover:text-zinc-900">
-                Converters
-              </Link>
-              <Link href="/generators" className="block text-zinc-700 hover:text-zinc-900">
-                Generators
-              </Link>
+            <div className="mt-4 flex flex-col gap-3 text-[15px] text-[var(--text-soft)]">
+              <a href="/text-tools">Text Tools</a>
+              <a href="/developer-tools">Developer Tools</a>
+              <a href="/seo-tools">SEO Tools</a>
+              <a href="/converters">Converters</a>
+              <a href="/generators">Generators</a>
             </div>
           </div>
 
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-faint)]">
               Legal
             </div>
-            <div className="mt-3 space-y-2 text-sm">
-              <Link href="/privacy" className="block text-zinc-700 hover:text-zinc-900">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="block text-zinc-700 hover:text-zinc-900">
-                Terms of Use
-              </Link>
-              <p className="text-zinc-700">
-                Always review important output before publishing, submitting, or using
-                it in production systems.
+            <div className="mt-4 flex flex-col gap-3 text-[15px] text-[var(--text-soft)]">
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/terms-of-use">Terms of Use</a>
+              <p className="max-w-xs leading-7">
+                Always review important output before publishing, submitting,
+                or using it in production systems.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-zinc-300">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 text-sm text-zinc-700 md:flex-row md:items-center md:justify-between">
-            <div>© 2026 Toolyo. All rights reserved.</div>
-            <div>Built for text, SEO, developer workflows, converters, and generators.</div>
-          </div>
+        <div className="flex flex-col gap-3 border-t border-[var(--border-main)] py-6 text-sm text-[var(--text-soft)] sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Toolyo. All rights reserved.</p>
+          <p>Built for text, SEO, developer workflows, converters, and generators.</p>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }

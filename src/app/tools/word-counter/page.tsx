@@ -50,40 +50,40 @@ export default function WordCounterPage() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Paste or type your text here..."
-            className="min-h-[240px] w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-zinc-500"
+            className="min-h-[240px] w-full rounded-2xl border border-zinc-300 bg-zinc-50 p-4 text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-zinc-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-zinc-50 dark:placeholder:text-zinc-500"
           />
         </ToolInputCard>
 
         <div>
           <div className="mb-3 text-sm font-medium">Live statistics</div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Words</div>
-              <div className="mt-2 text-3xl font-bold">{stats.words}</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Words</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.words}</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Characters</div>
-              <div className="mt-2 text-3xl font-bold">{stats.characters}</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Characters</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.characters}</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">No spaces</div>
-              <div className="mt-2 text-3xl font-bold">{stats.charactersNoSpaces}</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">No spaces</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.charactersNoSpaces}</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Lines</div>
-              <div className="mt-2 text-3xl font-bold">{stats.lines}</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Lines</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.lines}</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Paragraphs</div>
-              <div className="mt-2 text-3xl font-bold">{stats.paragraphs}</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Paragraphs</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.paragraphs}</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Reading time</div>
-              <div className="mt-2 text-3xl font-bold">{stats.readingTime} min</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Reading time</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.readingTime} min</div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 p-4">
-              <div className="text-sm text-zinc-500">Speaking time</div>
-              <div className="mt-2 text-3xl font-bold">{stats.speakingTime} min</div>
+            <div className="rounded-2xl border border-zinc-200 p-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400">Speaking time</div>
+              <div className="mt-2 text-3xl font-bold text-zinc-950 dark:text-zinc-50">{stats.speakingTime} min</div>
             </div>
           </div>
         </div>

@@ -21,9 +21,9 @@ export default function PopularToolsSection({
   return (
     <section className="mt-10">
       <div className="mb-4">
-        <h3 className="text-2xl font-bold text-zinc-950">{title}</h3>
+        <h3 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50">{title}</h3>
         {description ? (
-          <p className="mt-2 max-w-3xl text-zinc-700">{description}</p>
+          <p className="mt-2 max-w-3xl text-zinc-700 dark:text-zinc-300">{description}</p>
         ) : null}
       </div>
 

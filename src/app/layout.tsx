@@ -2,6 +2,7 @@ import CommandPalette from "@/components/command-palette";
 import type { Metadata } from "next";
 import "./globals.css";
 import GoogleAnalytics from "@/components/google-analytics";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://toolyo-kappa.vercel.app"),
@@ -54,24 +55,53 @@ export default function RootLayout({
           id="toolyo-theme-init"
           dangerouslySetInnerHTML={{
             __html: `
-(function() {
+(function () {
   try {
+    var root = document.documentElement;
     var saved = localStorage.getItem("theme");
-    var dark = saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    var theme = saved === "dark" || saved === "light"
+      ? saved
+      : "light";
+
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    root.style.colorScheme = theme;
   } catch (e) {}
 })();
             `,
           }}
         />
+        <script
+          id="toolyo-ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Toolyo",
+              url: "https://toolyo-kappa.vercel.app",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://toolyo-kappa.vercel.app/tools/{search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </head>
-      <body>
-        <GoogleAnalytics />{children}  <CommandPalette />
-</body>
+      <body suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+          storageKey="theme"
+        >
+          <GoogleAnalytics />
+          <CommandPalette />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -59,7 +59,7 @@ export default function OutputActionBar() {
     <div className="mb-3 flex flex-wrap gap-2">
       <button
         onClick={handleCopy}
-        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm hover:border-zinc-500"
+        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm transition hover:border-zinc-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-zinc-50 dark:hover:border-neutral-500"
         type="button"
       >
         {copyLabel}
@@ -67,7 +67,7 @@ export default function OutputActionBar() {
 
       <button
         onClick={handleSelect}
-        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm hover:border-zinc-500"
+        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm transition hover:border-zinc-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-zinc-50 dark:hover:border-neutral-500"
         type="button"
       >
         Select output
@@ -75,7 +75,7 @@ export default function OutputActionBar() {
 
       <button
         onClick={handleDownload}
-        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm hover:border-zinc-500"
+        className="rounded-lg border border-zinc-300 px-3 py-1 text-sm transition hover:border-zinc-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-zinc-50 dark:hover:border-neutral-500"
         type="button"
       >
         {downloadLabel}
